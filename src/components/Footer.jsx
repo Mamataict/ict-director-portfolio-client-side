@@ -40,7 +40,7 @@ const Footer = () => {
       <div className="py-3 px-2 md:px-[initial]">
         <div className="container m-auto md:flex md:justify-between py-10 gap-3 space-y-8 md:space-y-0">
           <div className="w-full md:w-[40%] pb-10 md:pb-[initial] space-y-2">
-            <div className="text-[35px] sm:text-[40px] font-bold text-white">
+            <div className="text-[35px] sm:text-[40px] font-bold ">
               TOWHID AHMED
             </div>
             <div className="mt-4">
@@ -52,7 +52,7 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faFacebookF}
                     className="text-2xl"
-                    color="white"
+                    
                   />
                 </Link>
 
@@ -65,14 +65,14 @@ const Footer = () => {
                   <FontAwesomeIcon
                     icon={faLinkedin}
                     className="text-2xl"
-                    color="white"
+                    
                   />
                 </Link>
                 <Link href="mailto:towhid.ahmed@gmail.com">
                   <FontAwesomeIcon
                     icon={faMailBulk}
                     className="text-2xl"
-                    color="white"
+                    
                   />
                 </Link>
                 <Link
@@ -81,14 +81,14 @@ const Footer = () => {
                 <FontAwesomeIcon
                   icon={faPhone}
                   className="text-2xl"
-                  color="white"
+                  
                 />
                 </Link>
               </div>
             </div>
           </div>
           <div className="w-full md:w-[40%] pb-10 md:pb-[initial]">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 text-white">
+            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 ">
               Contact Info
             </div>
             <div className="space-y-3">
@@ -98,7 +98,7 @@ const Footer = () => {
                   color="white"
                   className="mt-1"
                 />
-                <div className="text-white">
+                <div className="">
                   “Boro-Bari”, 13, Rashid Building 1st lane, Banglabazar,
                   Chittagong.
                 </div>
@@ -109,7 +109,7 @@ const Footer = () => {
                   color="white"
                   className="mt-1"
                 />
-                <div className="text-white">towhid.ahmed@gmail.com</div>
+                <div className="">towhid.ahmed@gmail.com</div>
               </div>
               <div className="flex space-x-2">
                 <FontAwesomeIcon
@@ -117,15 +117,15 @@ const Footer = () => {
                   color="white"
                   className="mt-1"
                 />
-                <div className="text-white">+88 01677 880088</div>
+                <div className="">+88 01677 880088</div>
               </div>
             </div>
           </div>
           <div className="w-full md:w-[20%] ">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 text-white">
+            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 ">
               Contact Form
             </div>
-            <form onSubmit={handleSubmit} className="text-white space-y-2 max-w-[250px]">
+            <form onSubmit={handleSubmit} className=" space-y-2 max-w-[250px]">
               <div className="space-y-3">
                 <label className="text-lg">Name</label>
                 <input
@@ -156,7 +156,7 @@ const Footer = () => {
                   className="p-1 rounded border-2 border-[#5CB22D] w-full"
                 />
               </div>
-              <button className="bg-[#5CB22D] text-white px-3 py-1 rounded mt-2 hover:bg-white hover:text-[#5CB22D] border-2 border-[#5CB22D] cursor-pointer">
+              <button className="bg-[#5CB22D]  px-3 py-1 rounded mt-2 hover:bg-white hover:text-[#5CB22D] border-2 border-[#5CB22D] cursor-pointer">
                 Send
               </button>
             </form>
@@ -164,7 +164,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-white/35 py-3 px-8 sm:px-[initial]">
-        <div className="container m-auto text-white text-[14px] text-center sm:flex sm:justify-between justify-center items-center sm:items-start">
+        <div className="container m-auto  text-[14px] text-center sm:flex sm:justify-between justify-center items-center sm:items-start">
           <div className="pb-2 sm:pb-[initial]">
             © Copyright <b>Towhid Ahmed</b>. All rights reserved.
           </div>

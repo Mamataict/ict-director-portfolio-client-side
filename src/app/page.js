@@ -306,13 +306,13 @@ management etc. as a part of FREELANCING activity.`,
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span> */}
-        <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
+        {/* <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
           <div className="flex justify-start items-center lg:w-[50%]">
             <div className="space-y-2 sm:space-y-4">
-              <div className="text-4xl sm:text-5xl font-extrabold text-white">
+              <div className="text-4xl sm:text-5xl font-extrabold ">
                 Towhid Ahmed
               </div>
-              <div className="text-2xl sm:text-4xl font-bold text-white flex">
+              <div className="text-2xl sm:text-4xl font-bold flex">
                 I&apos;m{" "}
                 <div className="ml-2 text-[#55e00b]">
                   <Typewriter
@@ -327,7 +327,7 @@ management etc. as a part of FREELANCING activity.`,
                   />
                 </div>
               </div>
-              <div className="text-md sm:text-lg font-semibold text-white">
+              <div className="text-md sm:text-lg ">
                 My goal is to integrate social development of Bangladesh with
                 business, social initiatives, technology based entrepreneurships
                 and knowledge development. I invest my thoughts, ideas and
@@ -337,7 +337,7 @@ management etc. as a part of FREELANCING activity.`,
 
               <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px]">
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_API_URL}/files_cus/Towhid-Ahmed.pdf`}
+                  href={`/files_cus/Towhid-Ahmed.pdf`}
                   className="bg-[#55e00b] text-md sm:text-xl rounded-2xl px-3 py-2 shadow-2xl shadow-green-300 font-semibold shadow-glow"
                   target="_blank"
                   referrerPolicy="no-referrer"
@@ -388,33 +388,75 @@ management etc. as a part of FREELANCING activity.`,
 
           <div className="flex justify-center items-center lg:w-[50%]">
             <div className="flex justify-center py-[25px] items-center">
-              <div className="overflow-hidden relative rounded-full w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
+              <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
                 <div className="absolute inset-0 value-border-1 z-[1]"></div>
 
                 <div
-                  className="absolute inset-1 rounded-full z-[10] bg-[#1d242e] 
+                  className="absolute inset-1  z-[10] bg-[#ffffff] 
       w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px]
       text-xl sm:text-2xl flex justify-center items-center text-center p-3 ml-[0.7px] mt-[0.7px] overflow-hidden"
                 >
-                  <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] rounded-full  pt-4">
+                  <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
                     <Image
-                      src={`${process.env.NEXT_PUBLIC_API_URL}/images_cus/profile_pic/me.png`}
+                      src={`/images_cus/profile_pic/me.png`}
                       alt="Towhid Ahmed"
                       width={80}
                       height={80}
-                      className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover"
+                      className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
                     />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+      <div className="container m-auto">
+          <div className="grid grid-cols-5 gap-4">
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+          </div>
       </div>
-      <div className="px-3 sm:px-4 lg:px-[initial]">
+
+      </div>
+      <div className="px-3 sm:px-4 lg:px-[initial] ">
         <div className="container m-auto  py-15 sm:py-20">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Specialities
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="lg:flex py-7 space-y-10 lg:space-y-0">
             <div className="lg:w-[50%] space-y-5 ">
@@ -423,7 +465,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Project Management.
                 </div>
               </div>
@@ -432,7 +474,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Training & Facilitation.
                 </div>
               </div>
@@ -441,7 +483,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Digital Marketing.
                 </div>
               </div>
@@ -450,7 +492,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Advertising.
                 </div>
               </div>
@@ -459,7 +501,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Event Management & Activation.
                 </div>
               </div>
@@ -468,7 +510,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Marketing and Management consultancy.
                 </div>
               </div>
@@ -477,7 +519,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Information & Communication Technology (ICT).
                 </div>
               </div>
@@ -486,7 +528,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Video editing/production.
                 </div>
               </div>
@@ -495,14 +537,14 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className="text-white text-xl sm:text-2xl">
+                <div className=" text-xl sm:text-2xl">
                   Creative designs.
                 </div>
               </div>
             </div>
             <div className="lg:w-[50%] flex justify-center items-center ">
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}/images_cus/me/7.jpg`}
+                src={`/images_cus/me/7.jpg`}
                 alt="Towhid Ahmed"
                 width={80}
                 height={80}
@@ -515,10 +557,11 @@ management etc. as a part of FREELANCING activity.`,
 
       <div id="background_preamp" className="px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto py-8 sm:py-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Background & Preamp
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
-          <div className="py-7 leading-relaxed text-white text-justify">
+          <div className="py-7 leading-relaxed  text-justify">
             <div className="lg:flex lg:justify-between lg:space-x-15 mb-5 ">
               <div className="mb-3 lg:mb-0">
                 <b>TOWHID AHMED</b> is the only son of Rafique Ahamed and one of
@@ -536,7 +579,7 @@ management etc. as a part of FREELANCING activity.`,
               </div>
 
               <Image
-                src={`${process.env.NEXT_PUBLIC_API_URL}/images_cus/me/with-father.jpg`}
+                src={`/images_cus/me/with-father.jpg`}
                 alt="Towhid Ahmed"
                 width={80}
                 height={80}
@@ -664,11 +707,12 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       <div id="career" className="px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Career
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="py-7">
-            <div className="leading-relaxed text-white">
+            <div className="leading-relaxed ">
               Currently, Towhid Ahmed is serving as a Director of MAMATA, a
               social and non-government organization committed to socio-economic
               developments, health care services, poverty alleviation and
@@ -690,7 +734,7 @@ management etc. as a part of FREELANCING activity.`,
                       />
                     </div>
                     <div className="">
-                      <h3 className="font-semibold text-lg text-white">
+                      <h3 className="font-semibold text-lg ">
                         {exp.title}
                       </h3>
                       {exp.date && (
@@ -699,11 +743,11 @@ management etc. as a part of FREELANCING activity.`,
                         </p>
                       )}
                       {exp.description && (
-                        <p className="italic text-white mt-1">
+                        <p className="italic  mt-1">
                           {exp.description}
                         </p>
                       )}
-                      <ul className="list-disc list-inside mt-3 text-white space-y-1">
+                      <ul className="list-disc list-inside mt-3  space-y-1">
                         {exp.points?.map((point, i) => (
                           <li key={i}>{point}</li>
                         ))}
@@ -721,8 +765,9 @@ management etc. as a part of FREELANCING activity.`,
         className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
       >
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Entrepreneurship & Social Initiatives
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
             {entrepreneurship_social_init.map((exp, index) => (
@@ -740,7 +785,7 @@ management etc. as a part of FREELANCING activity.`,
                     />
                   </div>
                   <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold ">
                       {exp.title}
                     </h3>
 
@@ -748,19 +793,19 @@ management etc. as a part of FREELANCING activity.`,
                       {exp.date}
                     </p>
 
-                    <p className="italic mt-3 font-semibold text-white">
+                    <p className="italic mt-3 font-semibold ">
                       {exp.role}
                     </p>
                     {exp.link && (
-                      <p className="italic text-white hover:underline">
+                      <p className="italic  hover:underline">
                         {exp.link}
                       </p>
                     )}
                     {exp.location && (
-                      <p className="italic text-white">{exp.location}</p>
+                      <p className="italic ">{exp.location}</p>
                     )}
 
-                    <p className="text-white mt-3 leading-relaxed">
+                    <p className=" mt-3 leading-relaxed">
                       {exp.description}
                     </p>
                   </div>
@@ -772,8 +817,9 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       <div id="education" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Education
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-7">
             {education.map((exp, index) => (
@@ -791,18 +837,18 @@ management etc. as a part of FREELANCING activity.`,
                     />
                   </div>
                   <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold ">
                       {exp.title}
                     </h3>
                     <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
                       {exp.date}
                     </p>
-                    <p className="italic mt-3 font-semibold text-white">
+                    <p className="italic mt-3 font-semibold ">
                       {exp.institution}
                     </p>
 
                     {exp.location && (
-                      <p className="italic text-white">{exp.location}</p>
+                      <p className="italic ">{exp.location}</p>
                     )}
                   </div>
                 </div>
@@ -817,8 +863,9 @@ management etc. as a part of FREELANCING activity.`,
         className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
       >
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Conferences & Seminars
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative space-y-2 py-7">
             {conferences_seminars.map((exp, index) => (
@@ -831,7 +878,7 @@ management etc. as a part of FREELANCING activity.`,
                     />
                   </div>
                   <div className="">
-                    <h3 className="text-lg sm:text-lg font-bold text-white">
+                    <h3 className="text-lg sm:text-lg font-bold ">
                       {exp}
                     </h3>
                   </div>
@@ -847,8 +894,9 @@ management etc. as a part of FREELANCING activity.`,
         className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
       >
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Awards & Achievements
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-13">
             {awards_achievements.map((exp, index) => (
@@ -866,7 +914,7 @@ management etc. as a part of FREELANCING activity.`,
                     />
                   </div>
                   <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold ">
                       {exp.title}
                     </h3>
 
@@ -874,7 +922,7 @@ management etc. as a part of FREELANCING activity.`,
                       {exp.dates}
                     </p>
 
-                    <p className="text-white mt-3 leading-relaxed">
+                    <p className=" mt-3 leading-relaxed">
                       {exp.description}
                     </p>
                   </div>
@@ -886,8 +934,9 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       <div id="gallery" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Gallery
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative py-13">
             <Swiper
@@ -909,7 +958,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/304120.jpg`
+                      `/images_cus/gallery/304120.jpg`
                     }
                     alt="With Nepal Team Visit in Bangladesh"
                     width={100}
@@ -926,7 +975,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/484460.jpg`
+                      `/images_cus/gallery/484460.jpg`
                     }
                     alt="Interview Time"
                     width={100}
@@ -940,7 +989,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/990866.jpg`
+                      `/images_cus/gallery/990866.jpg`
                     }
                     alt="With Yeameen Yusuf Ahmed"
                     width={100}
@@ -956,7 +1005,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/150272.jpg`
+                      `/images_cus/gallery/150272.jpg`
                     }
                     alt="Birthday Celebration"
                     width={100}
@@ -970,7 +1019,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/508548.jpg`
+                      `/images_cus/gallery/508548.jpg`
                     }
                     alt="Refreshment Time"
                     width={100}
@@ -984,7 +1033,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/357943.jpg`
+                      `/images_cus/gallery/357943.jpg`
                     }
                     alt="Refreshment Time"
                     width={100}
@@ -998,7 +1047,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/876785.jpg`
+                      `/images_cus/gallery/876785.jpg`
                     }
                     alt="At Office"
                     width={100}
@@ -1012,7 +1061,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/484131.jpg`
+                      `/images_cus/gallery/484131.jpg`
                     }
                     alt="At Recitation and Discussion Program"
                     width={100}
@@ -1028,7 +1077,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/380638.jpg`
+                      `/images_cus/gallery/380638.jpg`
                     }
                     alt="At Recitation and Discussion Program"
                     width={100}
@@ -1044,7 +1093,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/821219.jpg`
+                      `/images_cus/gallery/821219.jpg`
                     }
                     alt="Family Legacy"
                     width={100}
@@ -1058,7 +1107,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/669931.jpg`
+                      `/images_cus/gallery/669931.jpg`
                     }
                     alt="Twelve Years of BBF Program"
                     width={100}
@@ -1074,7 +1123,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/507560.jpg`
+                      `/images_cus/gallery/507560.jpg`
                     }
                     alt="Inauguration of Mamata Dairy Farm"
                     width={100}
@@ -1090,7 +1139,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/868597.jpg`
+                      `/images_cus/gallery/868597.jpg`
                     }
                     alt="Office Time"
                     width={100}
@@ -1104,7 +1153,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/796879.jpg`
+                      `/images_cus/gallery/796879.jpg`
                     }
                     alt="With Ayub Bachchu"
                     width={100}
@@ -1118,7 +1167,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/810927.jpg`
+                      `/images_cus/gallery/810927.jpg`
                     }
                     alt="With Ayub Bachchu"
                     width={100}
@@ -1132,7 +1181,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/746056.jpg`
+                      `/images_cus/gallery/746056.jpg`
                     }
                     alt="Mamata Dairy Farm Visit"
                     width={100}
@@ -1146,7 +1195,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/726457.jpg`
+                      `/images_cus/gallery/726457.jpg`
                     }
                     alt="Meeting with Health Program"
                     width={100}
@@ -1162,7 +1211,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/948003.jpg`
+                      `/images_cus/gallery/948003.jpg`
                     }
                     alt="Office Time at meeting"
                     width={100}
@@ -1176,7 +1225,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/476297.jpg`
+                      `/images_cus/gallery/476297.jpg`
                     }
                     alt="At MAMATA Dairy Farm"
                     width={100}
@@ -1190,7 +1239,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/289523.jpg`
+                      `/images_cus/gallery/289523.jpg`
                     }
                     alt="Group work facilitation."
                     width={100}
@@ -1206,7 +1255,7 @@ management etc. as a part of FREELANCING activity.`,
                 <div className="w-full">
                   <Image
                     src={
-                      `${process.env.NEXT_PUBLIC_API_URL}/images_cus/gallery/542355.jpg`
+                      `/images_cus/gallery/542355.jpg`
                     }
                     alt="Office time. Meetings."
                     width={100}
@@ -1222,12 +1271,13 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       <div id="blog" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Blog
+            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
           <div className="relative py-13">
             <div
-              className="bg-yellow-50 border-l-4 border-[#5CB22D] text-[#5CB22D] p-4 "
+              className="bg-yellow-50 border-l-4 border-b-2 border-[#5CB22D] text-[#5CB22D] p-4 "
               role="alert"
             >
               <p className="font-bold">Not found</p>
@@ -1238,12 +1288,12 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       {/* <div id="contact" className="pt-[50px] px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold text-white">
+          <div className="text-3xl sm:text-4xl font-extrabold ">
             Contact
           </div>
           <div className="relative py-13 grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="w-full">
-              <div className="w-full text-5xl text-white font-bold pb-5">
+              <div className="w-full text-5xl  font-bold pb-5">
                 Towhid Ahmed
               </div>
               <div className="flex space-x-3 pb-5">
@@ -1251,26 +1301,26 @@ management etc. as a part of FREELANCING activity.`,
                   href={"#"}
                   className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
                 >
-                  <FontAwesomeIcon icon={faMailBulk} className="text-white" />
+                  <FontAwesomeIcon icon={faMailBulk} className="" />
                 </Link>
                 <Link
                   href={"#"}
                   className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} className="text-white" />
+                  <FontAwesomeIcon icon={faLinkedin} className="" />
                 </Link>
                 <Link
                   href={"#"}
                   className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
                 >
-                  <FontAwesomeIcon icon={faPhone} className="text-white" />
+                  <FontAwesomeIcon icon={faPhone} className="" />
                 </Link>
               </div>
             </div>
             <div>
               <div className="flex space-x-2">
-                <FontAwesomeIcon icon={faLocationDot} className="text-white mt-1.5 text-sm" />
-                <div className="text-white text-md">
+                <FontAwesomeIcon icon={faLocationDot} className=" mt-1.5 text-sm" />
+                <div className=" text-md">
                   “Boro-Bari”, 13, Rashid Building 1st lane, Banglabazar,
                   Chittagong.
                 </div>

@@ -182,7 +182,7 @@ const Navbar = () => {
       <div
         className={`w-full fixed top-0 z-[99999]
           transition-all duration-500 ease-out  shadow-m px-3 sm:px-4 lg:px-[initial]
-          ${scrolled ? "py-4 bg-white/35" : "main-nav py-6"}`}
+          ${scrolled ? "py-4 bg-white/60" : "main-nav py-6"}`}
       >
         <div className="container m-auto flex items-center justify-between h-full w-full">
           {/* Logo */}
@@ -190,8 +190,8 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={`transition-all duration-500 ease-out font-semibold text-white hover:text-[#5CB22D] ${
-              scrolled ? "text-3xl" : "text-4xl"
+            className={`transition-all duration-500 ease-out font-semibold  hover:text-[#5CB22D] ${
+              scrolled ? "text-3xl text-[#5CB22D]" : "text-4xl"
             }`}
           >
             <a
@@ -212,9 +212,9 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <ul className="lg:flex gap-1 hidden ">
             {menu.map(({ label, key, linked, children }) => (
-              <li key={key} className="relative group text-[17px] text-wrap">
+              <li key={key} className="relative group text-[20px] text-wrap">
                 <a
-                  className=" cursor-pointer p-2 flex gap-1 text-white hover:text-[#5CB22D]"
+                  className={`cursor-pointer p-2 flex gap-1 hover:text-[#5CB22D] `}
                   onMouseEnter={() => setHoveredMenu(key)}
                   onMouseLeave={() => setHoveredMenu(null)}
                   disabled={children.length === 0}
