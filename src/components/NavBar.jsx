@@ -323,19 +323,19 @@ const Navbar = () => {
               className="relative z-50 flex flex-col justify-between w-8 h-6 cursor-pointer"
             >
               <motion.span
-                className="block h-1 w-full rounded bg-white origin-center"
+                className="block h-1 w-full rounded bg-black origin-center"
                 variants={topLine}
                 animate={isMenuOpen ? "open" : "closed"}
                 transition={springTransition}
               />
               <motion.span
-                className="block h-1 w-full rounded bg-white origin-center"
+                className="block h-1 w-full rounded bg-black origin-center"
                 variants={midLine}
                 animate={isMenuOpen ? "open" : "closed"}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               />
               <motion.span
-                className="block h-1 w-full rounded bg-white origin-center"
+                className="block h-1 w-full rounded bg-black origin-center"
                 variants={botLine}
                 animate={isMenuOpen ? "open" : "closed"}
                 transition={springTransition}

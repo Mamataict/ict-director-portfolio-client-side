@@ -20,6 +20,8 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const roles = [
   "Young Entrepreneur",
@@ -34,6 +36,7 @@ const roles = [
 ];
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   const experiences = [
     {
       side: "left",
@@ -298,7 +301,7 @@ management etc. as a part of FREELANCING activity.`,
       <Navbar />
       <div
         id="home"
-        className="flex justify-center max-w-[100vw] overflow-hidden items-center min-h-[100vh] md:min-h-[500px] pt-[80px] lg:pt-[150px] px-3 sm:px-4 lg:px-[initial]"
+        className="flex justify-center max-w-[100vw] overflow-hidden items-center min-h-[100vh] md:min-h-[700px] pt-[80px] lg:pt-[150px] px-3 sm:px-4 lg:px-[initial]"
       >
         {/* <span class="ball"></span>
         <span class="ball"></span>
@@ -306,7 +309,7 @@ management etc. as a part of FREELANCING activity.`,
         <span class="ball"></span>
         <span class="ball"></span>
         <span class="ball"></span> */}
-        {/* <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
+        <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
           <div className="flex justify-start items-center lg:w-[50%]">
             <div className="space-y-2 sm:space-y-4">
               <div className="text-4xl sm:text-5xl font-extrabold ">
@@ -335,10 +338,10 @@ management etc. as a part of FREELANCING activity.`,
                 place for living.
               </div>
 
-              <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px]">
+              <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px] pt-3 pb-5">
                 <Link
                   href={`/files_cus/Towhid-Ahmed.pdf`}
-                  className="bg-[#55e00b] text-md sm:text-xl rounded-2xl px-3 py-2 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                  className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 pt-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
                   target="_blank"
                   referrerPolicy="no-referrer"
                 >
@@ -409,10 +412,40 @@ management etc. as a part of FREELANCING activity.`,
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
-      <div className="container m-auto">
-          <div className="grid grid-cols-5 gap-4">
+        {/* <div className="container m-auto">
+          <div className="grid grid-cols-4 gap-7">
+           <motion.div
+  initial={{
+    opacity: 0,
+    x: 200,   // start off-screen to the right
+    y: -150,  // start off-screen above
+    rotate: 15, // angled like turning in
+  }}
+  animate={{
+    opacity: 1,
+    x: 0,
+    y: 0,
+    rotate: 0,
+  }}
+  transition={{
+    type: "spring",
+    stiffness: 80,
+    damping: 12,
+    duration: 1.2,
+  }}
+  className="flex justify-center items-center"
+>
+
+            <Image
+                src={`/images_cus/me/7.jpg`}
+                alt="Towhid Ahmed"
+                width={80}
+                height={80}
+                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
+              />
+            </motion.div>
             <Image
                 src={`/images_cus/me/7.jpg`}
                 alt="Towhid Ahmed"
@@ -434,23 +467,9 @@ management etc. as a part of FREELANCING activity.`,
                 height={80}
                 className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
               />
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
+            
           </div>
-      </div>
-
+      </div> */}
       </div>
       <div className="px-3 sm:px-4 lg:px-[initial] ">
         <div className="container m-auto  py-15 sm:py-20">
@@ -465,9 +484,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className=" text-xl sm:text-2xl">
-                  Project Management.
-                </div>
+                <div className=" text-xl sm:text-2xl">Project Management.</div>
               </div>
               <div className="flex space-x-3 ">
                 <FontAwesomeIcon
@@ -483,18 +500,14 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className=" text-xl sm:text-2xl">
-                  Digital Marketing.
-                </div>
+                <div className=" text-xl sm:text-2xl">Digital Marketing.</div>
               </div>
               <div className="flex space-x-3 ">
                 <FontAwesomeIcon
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className=" text-xl sm:text-2xl">
-                  Advertising.
-                </div>
+                <div className=" text-xl sm:text-2xl">Advertising.</div>
               </div>
               <div className="flex space-x-3 ">
                 <FontAwesomeIcon
@@ -537,9 +550,7 @@ management etc. as a part of FREELANCING activity.`,
                   icon={faSnowflake}
                   className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
                 />
-                <div className=" text-xl sm:text-2xl">
-                  Creative designs.
-                </div>
+                <div className=" text-xl sm:text-2xl">Creative designs.</div>
               </div>
             </div>
             <div className="lg:w-[50%] flex justify-center items-center ">
@@ -561,147 +572,188 @@ management etc. as a part of FREELANCING activity.`,
             Background & Preamp
             <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
-          <div className="py-7 leading-relaxed  text-justify">
-            <div className="lg:flex lg:justify-between lg:space-x-15 mb-5 ">
-              <div className="mb-3 lg:mb-0">
-                <b>TOWHID AHMED</b> is the only son of Rafique Ahamed and one of
-                the grand-sons of Late Bazal Ahmed Swadagar, one of the
-                prominent industrialists of 1960’s and a great contributor of
-                Chittagong. Rafique Ahamed is considered as an eminent
-                personality of port city Chittagong for his social works,
-                philanthropic initiatives, businesses, social networks, charity
-                and remarkable qualities and public speaking abilities.
-                Throughout his life, he dedicated himself for social causes and
-                development and thus, founded a Non-Government Organization
-                (NGO) named “MAMATA” in 1983. He's the eldest son of Late Bazal
-                Ahmed Swadagar, the proud owner of BANGLADESH RICE MILLS and
-                Industries of the then East Pakistan.
+          <div>
+            <motion.div
+              layout
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+             className="pt-7 pb-3 leading-relaxed text-justify"
+            >
+              <div className="lg:flex lg:justify-between lg:space-x-15 mb-5 ">
+                <div className="mb-3 lg:mb-0">
+                  <b>TOWHID AHMED</b> is the only son of Rafique Ahamed and one
+                  of the grand-sons of Late Bazal Ahmed Swadagar, one of the
+                  prominent industrialists of 1960’s and a great contributor of
+                  Chittagong. Rafique Ahamed is considered as an eminent
+                  personality of port city Chittagong for his social works,
+                  philanthropic initiatives, businesses, social networks,
+                  charity and remarkable qualities and public speaking
+                  abilities. Throughout his life, he dedicated himself for
+                  social causes and development and thus, founded a
+                  Non-Government Organization (NGO) named “MAMATA” in 1983. He's
+                  the eldest son of Late Bazal Ahmed Swadagar, the proud owner
+                  of BANGLADESH RICE MILLS and Industries of the then East
+                  Pakistan.
+                </div>
+
+                <Image
+                  src={`/images_cus/me/with-father.jpg`}
+                  alt="Towhid Ahmed"
+                  width={80}
+                  height={80}
+                  className="w-[400px] sm:w-[500px] lg:w-[400px] h-auto object-contain"
+                />
               </div>
 
-              <Image
-                src={`/images_cus/me/with-father.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className="w-[400px] sm:w-[500px] lg:w-[400px] h-auto object-contain"
-              />
-            </div>
-
-            <div>
-              Rafique Ahamed received the prestigious Ekushey Podok for his
-              outstanding contribution in Socioeconomic Development in
-              Bangladesh. Mr. Ahamed is also a Life member of Lions Clubs
-              International and became the proud ‘District Governor’ of Lions
-              Clubs Intl. District 315 -B4 in 2003. He and his organization
-              MAMATA is the receiver of thirteen (16) National Awards which
-              includes "Best Social Worker", "Best Organization", “YUNESCO AWARD
-              1992”, “Best Microfinance Institution” Award by Citi Foundation”
-              etc. and many international awards including “Melvin
-              Jones-Fellowship”. Following the roots and paths of father and
-              grand-father, Towhid Ahmed also involved himself in several
-              extra-curricular, social and youth driven activities since his
-              high school period. He was an active member, Executive Committee
-              member, Director and office bearer of LEO Clubs International:
-              District 315-B4, AIESEC (World’s largest student organization with
-              exchange program), North South University Social Services Club
-              (NSUSSC), Junior Chamber International (JCI) and Alumni
-              Association of North South University (AANSU). Towhid Ahmed found
-              his keen interest in Social Business models & Entrepreneurships,
-              Knowledge Sharing, Marketing & Communication since his university
-              period and thus involved himself at several national and global
-              case competitions and merit programs and achieved “Order of Merit”
-              at Global Academic Challenge 2008 organized by Marketing Agencies
-              Associations Worldwide (MAAW). After completing graduation from
-              North South University, he started his career at PR, Communication
-              and Marketing Agencies. He was an active and Organizing Committee
-              member of the “Social Business Forum-2012” and “Social Business
-              Forum 2013” hosted at North South University. A notable feature of
-              Towhid Ahmed is his connection and involvements with the most
-              prominent public and private universities of Bangladesh including
-              Chittagong University, Institute of Business Administration (IBA),
-              Dhaka University, North South University, Brac University, East
-              West University, American International University-Bangladesh,
-              Premier University, East Delta University, United International
-              University and University of Liberal Arts and Science for
-              Volunteer Development programs, Youth Programs and Training
-              Facilitations. He trained, facilitated and managed a brilliant
-              pool of volunteers and liaison officers for 11th South Asian Games
-              (Formerly known as SAF Games) Dhaka 2010 as a Trainer and
-              Facilitator of ‘Volunteer Management Sub-Committee’ and also
-              trained and developed volunteers and protocol officers for 1 st
-              World Marketing Summit 2012 that was held in Dhaka. In the year
-              2015, Towhid Ahmed got associated with development sector and
-              joined MAMATA as a part of its Core Management Team. MAMATA, very
-              renowned in Bangladesh, is a social and non-government
-              organization committed to socio-economic developments, health care
-              services, poverty alleviation and livelihood improvement of the
-              disadvantaged people of the society. MAMATA, over the period of 4
-              decades, has gradually expanded it's activities in multi sectoral
-              socioeconomic development programs including TB and Malaria
-              Control Program in Bangladesh, Microfinance, Health Care Services
-              including Maternity and Child health care, Education for
-              underprivileged children and section of the society, ensuring pure
-              drinking water and sanitation, Prevention of HIV/AIDS, Adolescents
-              Health and Agriculture, Livestock & Fisheries, Women Workers
-              Rights, Gender, Human Rights, Child Rights , Improvement of
-              livelihood of Garments/RMG Workers. In an era where the world
-              needs progressive future generation, Towhid Ahmed believes that
-              children are the foundation of every nation’s growth and
-              development aspirations, and must be at the center of any
-              development initiatives including Right to Education and Proper
-              Health-care facilities. Under the leadership and supervision of
-              Mr. Towhid Ahmed, Mamata currently runs many programs and projects
-              targeting Health care and Education sector. Programs and projects
-              to be mentioned are “Mamata Health Program” and “Mamata Education
-              Program”, “Mamata Sishu Surrokkha Kormosuchi”, “Shuchala”, “Health
-              Care Services Delivery Project (HCSDP- CCPP)” with the objective
-              of empowering underprivileged children by providing education,
-              nutrition, and wellness support. The Program/Projects are well
-              aligned to the Education Policy, and SDG Goal 4 (Ensure inclusive
-              and equitable quality education and promote lifelong learning
-              opportunities for all). Mamata works with children (6 months – 18
-              years) living in difficult circumstances, children from poor and
-              marginalized families, disaster-struck and street children,
-              children of RMG workers and children living in remote villages and
-              hard to reach areas. In 2009, Mamata Bidyalaya was initiated to
-              provide formal education, recreation and safety to the children of
-              garment workers, marginalized and dropout children with the aim of
-              improving the quality of life of children and their future. For 7
-              years, ECCD activities were being carried out by Mamata with her
-              own funding and with the support of various donor organizations.
-              The parents of these children were reluctant and somewhat depended
-              on Mamata to mainstream their children into formal education
-              taking this into consideration in 2016 Mr. Towhid Ahmed took
-              initiative to impart formal education to children. To ensure that
-              every child has the opportunity to access education especially the
-              marginalized children and the children of RMG workers. Mamata
-              Bidyalaya operates in its own building and this education program
-              is fully funded by Mamata. In 2020, Mamata Biyalaya was renamed as
-              Mamata School and College as the organization aims to expand this
-              school into a college in the near future. Currently more than 500
-              students are enrolled in the School and the classroom facilities
-              and all the cultural and recreational activities are adhered
-              following the government directives under the overall supervision
-              of Mr. Ahmed. Mamata had been implementing the “Children are
-              protected from violence” project since June 2013 with the support
-              of Save the Children International. The long-term implementation
-              of the project has played a significant role in ensuring the
-              safety,security and proper development of vulnerable children in
-              four wards of Chattogram City Coorporation (CCC). Mamata has made
-              4 child-care spaces functional within the community to ensure
-              childrens rights, positive attitude towards children, positive
-              discipline practice, life skills, and ensuring their rights
-              through various awareness sessions, accountability, and training.
-              The project has phased out in December 2021, the project
-              activities were widely accepted by the local community including
-              children, adolescents, parents, teachers, religious leaders and
-              various government stakeholders and the project created
-              expectations among the population due to its effective role in
-              ensuring child protection. Mr. Ahmed vision was to scale up this
-              impact and hence Mamata decided to implement the program titled
-              “Mamata Shishu Surokkha Kormosuchi” and continued the activities
-              with the target audience.
-            </div>
+              <div>
+                Rafique Ahamed received the prestigious Ekushey Podok for his
+                outstanding contribution in Socioeconomic Development in
+                Bangladesh. Mr. Ahamed is also a Life member of Lions Clubs
+                International and became the proud ‘District Governor’ of Lions
+                Clubs Intl. District 315 -B4 in 2003. He and his organization
+                MAMATA is the receiver of thirteen (16) National Awards which
+                includes "Best Social Worker", "Best Organization", “YUNESCO
+                AWARD 1992”, “Best Microfinance Institution” Award by Citi
+                Foundation” etc. and many international awards including “Melvin
+                Jones-Fellowship”. Following the roots and paths of father and
+                grand-father, Towhid Ahmed also involved himself in several
+                extra-curricular, social and youth driven activities since his
+                high school period. He was an active member, Executive Committee
+                member, Director and office bearer of LEO Clubs International:
+                District 315-B4, AIESEC (World’s largest student organization
+                with exchange program), North South University Social Services
+                Club (NSUSSC), Junior Chamber International (JCI) and Alumni
+                Association of North South University (AANSU). Towhid Ahmed
+                found his keen interest in Social Business models &
+                Entrepreneurships, Knowledge Sharing, Marketing & Communication
+                since his university period and thus involved himself at several
+                national and global case competitions and merit programs and
+                achieved “Order of Merit” at Global Academic Challenge 2008
+                organized by Marketing Agencies Associations Worldwide (MAAW).
+                After completing graduation from North South University, he
+                started his career at PR, Communication and Marketing Agencies.
+                He was an active and Organizing Committee member of the “Social
+                Business Forum-2012” and “Social Business Forum 2013” hosted at
+                North South University.
+                <div className="lg:flex lg:justify-between lg:space-x-5 ">
+                  <Image
+                    src={`/images_cus/me/IMG_9150.jpg`}
+                    alt="Towhid Ahmed"
+                    width={80}
+                    height={80}
+                    className="w-[400px] sm:w-[500px] lg:w-[350px] h-auto object-contain my-4"
+                  />
+                  <div className="mb-3 lg:mb-0">
+                    A notable feature of Towhid Ahmed is his connection and
+                    involvements with the most prominent public and private
+                    universities of Bangladesh including Chittagong University,
+                    Institute of Business Administration (IBA), Dhaka
+                    University, North South University, Brac University, East
+                    West University, American International
+                    University-Bangladesh, Premier University, East Delta
+                    University, United International University and University
+                    of Liberal Arts and Science for Volunteer Development
+                    programs, Youth Programs and Training Facilitations. He
+                    trained, facilitated and managed a brilliant pool of
+                    volunteers and liaison officers for 11th South Asian Games
+                    (Formerly known as SAF Games) Dhaka 2010 as a Trainer and
+                    Facilitator of ‘Volunteer Management Sub-Committee’ and also
+                    trained and developed volunteers and protocol officers for 1
+                    st World Marketing Summit 2012 that was held in Dhaka. In
+                    the year 2015, Towhid Ahmed got associated with development
+                    sector and joined MAMATA as a part of its Core Management
+                    Team.
+                  </div>
+                </div>
+                MAMATA, very renowned in Bangladesh, is a social and
+                non-government organization committed to socio-economic
+                developments, health care services, poverty alleviation and
+                livelihood improvement of the disadvantaged people of the
+                society. MAMATA, over the period of 4 decades, has gradually
+                expanded it's activities in multi sectoral socioeconomic
+                development programs including TB and Malaria Control Program in
+                Bangladesh, Microfinance, Health Care Services including
+                Maternity and Child health care, Education for
+                {open && (
+                  <>
+                    {" "}
+                    underprivileged children and section of the society,
+                    ensuring pure drinking water and sanitation, Prevention of
+                    HIV/AIDS, Adolescents Health and Agriculture, Livestock &
+                    Fisheries, Women Workers Rights, Gender, Human Rights, Child
+                    Rights , Improvement of livelihood of Garments/RMG Workers.
+                    In an era where the world needs progressive future
+                    generation, Towhid Ahmed believes that children are the
+                    foundation of every nation’s growth and development
+                    aspirations, and must be at the center of any development
+                    initiatives including Right to Education and Proper
+                    Health-care facilities. Under the leadership and supervision
+                    of Mr. Towhid Ahmed, Mamata currently runs many programs and
+                    projects targeting Health care and Education sector.
+                    Programs and projects to be mentioned are “Mamata Health
+                    Program” and “Mamata Education Program”, “Mamata Sishu
+                    Surrokkha Kormosuchi”, “Shuchala”, “Health Care Services
+                    Delivery Project (HCSDP- CCPP)” with the objective of
+                    empowering underprivileged children by providing education,
+                    nutrition, and wellness support. The Program/Projects are
+                    well aligned to the Education Policy, and SDG Goal 4 (Ensure
+                    inclusive and equitable quality education and promote
+                    lifelong learning opportunities for all). Mamata works with
+                    children (6 months – 18 years) living in difficult
+                    circumstances, children from poor and marginalized families,
+                    disaster-struck and street children, children of RMG workers
+                    and children living in remote villages and hard to reach
+                    areas. In 2009, Mamata Bidyalaya was initiated to provide
+                    formal education, recreation and safety to the children of
+                    garment workers, marginalized and dropout children with the
+                    aim of improving the quality of life of children and their
+                    future. For 7 years, ECCD activities were being carried out
+                    by Mamata with her own funding and with the support of
+                    various donor organizations. The parents of these children
+                    were reluctant and somewhat depended on Mamata to mainstream
+                    their children into formal education taking this into
+                    consideration in 2016 Mr. Towhid Ahmed took initiative to
+                    impart formal education to children. To ensure that every
+                    child has the opportunity to access education especially the
+                    marginalized children and the children of RMG workers.
+                    Mamata Bidyalaya operates in its own building and this
+                    education program is fully funded by Mamata. In 2020, Mamata
+                    Biyalaya was renamed as Mamata School and College as the
+                    organization aims to expand this school into a college in
+                    the near future. Currently more than 500 students are
+                    enrolled in the School and the classroom facilities and all
+                    the cultural and recreational activities are adhered
+                    following the government directives under the overall
+                    supervision of Mr. Ahmed. Mamata had been implementing the
+                    “Children are protected from violence” project since June
+                    2013 with the support of Save the Children International.
+                    The long-term implementation of the project has played a
+                    significant role in ensuring the safety,security and proper
+                    development of vulnerable children in four wards of
+                    Chattogram City Coorporation (CCC). Mamata has made 4
+                    child-care spaces functional within the community to ensure
+                    childrens rights, positive attitude towards children,
+                    positive discipline practice, life skills, and ensuring
+                    their rights through various awareness sessions,
+                    accountability, and training. The project has phased out in
+                    December 2021, the project activities were widely accepted
+                    by the local community including children, adolescents,
+                    parents, teachers, religious leaders and various government
+                    stakeholders and the project created expectations among the
+                    population due to its effective role in ensuring child
+                    protection. Mr. Ahmed vision was to scale up this impact and
+                    hence Mamata decided to implement the program titled “Mamata
+                    Shishu Surokkha Kormosuchi” and continued the activities
+                    with the target audience.
+                  </>
+                )}
+              </div>
+            </motion.div>
+            <button
+              onClick={() => setOpen(!open)}
+              className="mt-3 text-[#55e00b] cursor-pointer font-semibold hover:underline transition"
+            >
+              {open ? "Read Less" : "Read More"}
+            </button>
           </div>
         </div>
       </div>
@@ -734,18 +786,14 @@ management etc. as a part of FREELANCING activity.`,
                       />
                     </div>
                     <div className="">
-                      <h3 className="font-semibold text-lg ">
-                        {exp.title}
-                      </h3>
+                      <h3 className="font-semibold text-lg ">{exp.title}</h3>
                       {exp.date && (
                         <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md my-2">
                           {exp.date}
                         </p>
                       )}
                       {exp.description && (
-                        <p className="italic  mt-1">
-                          {exp.description}
-                        </p>
+                        <p className="italic  mt-1">{exp.description}</p>
                       )}
                       <ul className="list-disc list-inside mt-3  space-y-1">
                         {exp.points?.map((point, i) => (
@@ -793,21 +841,13 @@ management etc. as a part of FREELANCING activity.`,
                       {exp.date}
                     </p>
 
-                    <p className="italic mt-3 font-semibold ">
-                      {exp.role}
-                    </p>
+                    <p className="italic mt-3 font-semibold ">{exp.role}</p>
                     {exp.link && (
-                      <p className="italic  hover:underline">
-                        {exp.link}
-                      </p>
+                      <p className="italic  hover:underline">{exp.link}</p>
                     )}
-                    {exp.location && (
-                      <p className="italic ">{exp.location}</p>
-                    )}
+                    {exp.location && <p className="italic ">{exp.location}</p>}
 
-                    <p className=" mt-3 leading-relaxed">
-                      {exp.description}
-                    </p>
+                    <p className=" mt-3 leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
               </div>
@@ -847,9 +887,7 @@ management etc. as a part of FREELANCING activity.`,
                       {exp.institution}
                     </p>
 
-                    {exp.location && (
-                      <p className="italic ">{exp.location}</p>
-                    )}
+                    {exp.location && <p className="italic ">{exp.location}</p>}
                   </div>
                 </div>
               </div>
@@ -878,9 +916,7 @@ management etc. as a part of FREELANCING activity.`,
                     />
                   </div>
                   <div className="">
-                    <h3 className="text-lg sm:text-lg font-bold ">
-                      {exp}
-                    </h3>
+                    <h3 className="text-lg sm:text-lg font-bold ">{exp}</h3>
                   </div>
                 </div>
               </div>
@@ -922,9 +958,7 @@ management etc. as a part of FREELANCING activity.`,
                       {exp.dates}
                     </p>
 
-                    <p className=" mt-3 leading-relaxed">
-                      {exp.description}
-                    </p>
+                    <p className=" mt-3 leading-relaxed">{exp.description}</p>
                   </div>
                 </div>
               </div>
@@ -957,14 +991,11 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/304120.jpg`
-                    }
+                    src={`/images_cus/gallery/304120.jpg`}
                     alt="With Nepal Team Visit in Bangladesh"
                     width={100}
                     height={100}
                     className=" w-full h-auto aspect-[16/9] object-contain"
-                    
                   />
                   <div className="w-full bg-white">
                     With Nepal Team Visit in Bangladesh
@@ -974,9 +1005,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/484460.jpg`
-                    }
+                    src={`/images_cus/gallery/484460.jpg`}
                     alt="Interview Time"
                     width={100}
                     height={100}
@@ -988,9 +1017,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/990866.jpg`
-                    }
+                    src={`/images_cus/gallery/990866.jpg`}
                     alt="With Yeameen Yusuf Ahmed"
                     width={100}
                     height={100}
@@ -1004,9 +1031,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/150272.jpg`
-                    }
+                    src={`/images_cus/gallery/150272.jpg`}
                     alt="Birthday Celebration"
                     width={100}
                     height={100}
@@ -1018,9 +1043,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/508548.jpg`
-                    }
+                    src={`/images_cus/gallery/508548.jpg`}
                     alt="Refreshment Time"
                     width={100}
                     height={100}
@@ -1032,9 +1055,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/357943.jpg`
-                    }
+                    src={`/images_cus/gallery/357943.jpg`}
                     alt="Refreshment Time"
                     width={100}
                     height={100}
@@ -1046,9 +1067,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/876785.jpg`
-                    }
+                    src={`/images_cus/gallery/876785.jpg`}
                     alt="At Office"
                     width={100}
                     height={100}
@@ -1060,9 +1079,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/484131.jpg`
-                    }
+                    src={`/images_cus/gallery/484131.jpg`}
                     alt="At Recitation and Discussion Program"
                     width={100}
                     height={100}
@@ -1092,9 +1109,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/821219.jpg`
-                    }
+                    src={`/images_cus/gallery/821219.jpg`}
                     alt="Family Legacy"
                     width={100}
                     height={100}
@@ -1106,9 +1121,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/669931.jpg`
-                    }
+                    src={`/images_cus/gallery/669931.jpg`}
                     alt="Twelve Years of BBF Program"
                     width={100}
                     height={100}
@@ -1122,9 +1135,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/507560.jpg`
-                    }
+                    src={`/images_cus/gallery/507560.jpg`}
                     alt="Inauguration of Mamata Dairy Farm"
                     width={100}
                     height={100}
@@ -1138,9 +1149,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/868597.jpg`
-                    }
+                    src={`/images_cus/gallery/868597.jpg`}
                     alt="Office Time"
                     width={100}
                     height={100}
@@ -1152,9 +1161,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/796879.jpg`
-                    }
+                    src={`/images_cus/gallery/796879.jpg`}
                     alt="With Ayub Bachchu"
                     width={100}
                     height={100}
@@ -1166,9 +1173,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/810927.jpg`
-                    }
+                    src={`/images_cus/gallery/810927.jpg`}
                     alt="With Ayub Bachchu"
                     width={100}
                     height={100}
@@ -1180,9 +1185,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/746056.jpg`
-                    }
+                    src={`/images_cus/gallery/746056.jpg`}
                     alt="Mamata Dairy Farm Visit"
                     width={100}
                     height={100}
@@ -1194,9 +1197,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/726457.jpg`
-                    }
+                    src={`/images_cus/gallery/726457.jpg`}
                     alt="Meeting with Health Program"
                     width={100}
                     height={100}
@@ -1210,9 +1211,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/948003.jpg`
-                    }
+                    src={`/images_cus/gallery/948003.jpg`}
                     alt="Office Time at meeting"
                     width={100}
                     height={100}
@@ -1224,9 +1223,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/476297.jpg`
-                    }
+                    src={`/images_cus/gallery/476297.jpg`}
                     alt="At MAMATA Dairy Farm"
                     width={100}
                     height={100}
@@ -1238,9 +1235,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/289523.jpg`
-                    }
+                    src={`/images_cus/gallery/289523.jpg`}
                     alt="Group work facilitation."
                     width={100}
                     height={100}
@@ -1254,9 +1249,7 @@ management etc. as a part of FREELANCING activity.`,
               <SwiperSlide>
                 <div className="w-full">
                   <Image
-                    src={
-                      `/images_cus/gallery/542355.jpg`
-                    }
+                    src={`/images_cus/gallery/542355.jpg`}
                     alt="Office time. Meetings."
                     width={100}
                     height={100}
