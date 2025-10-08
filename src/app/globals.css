@@ -354,3 +354,11 @@ body {
 .swiper-button-prev {
   color: #55e00b !important; /* your desired color */
 }
+
+@media screen and (max-width: 768px) {
+
+  .swiper-gallery .swiper-slide {
+    padding: 0px 0px 20px 0px;
+  }
+
+}

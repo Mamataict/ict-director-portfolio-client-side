@@ -972,7 +972,7 @@ management etc. as a part of FREELANCING activity.`,
             Gallery
             <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
           </div>
-          <div className="relative py-13">
+          <div className="relative pt-13">
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
