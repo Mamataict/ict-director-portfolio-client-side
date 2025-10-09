@@ -20,7 +20,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "typewriter-effect";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
 const roles = [
@@ -35,8 +35,89 @@ const roles = [
   "Branding Consultant",
 ];
 
+// const sidebar = {
+//   open: {
+//     clipPath: "inset(0% 0% 0% 0%)",
+//     transition: {
+//       type: "spring",
+//       stiffness: 80,
+//       damping: 25,
+//       restDelta: 0.001,
+//     },
+//     opacity: 1, transition: { duration: 0.3 }
+//   },
+//   closed: {
+//     clipPath: "inset(0% 0% 100% 0%)",
+//     transition: {
+//       type: "spring",
+//       stiffness: 300,
+//       damping: 35,
+//       delay: 0.15,
+//     },
+//     opacity: 0, transition: { duration: 0.3 }
+//   },
+// };
+
+// const sidebar = {
+//   open: { opacity: 1, transition: { duration: 0.3 } },
+//   closed: { opacity: 0, transition: { duration: 0.3 } },
+// };
+
+// const sidebar = {
+//   open: {
+//     clipPath: "inset(0% 0% 0% 0%)",
+//     opacity: 1,
+//     transition: {
+//       type: "spring",
+//       stiffness: 80,
+//       damping: 25,
+//       restDelta: 0.001,
+//       duration: 0.6,
+//     },
+//   },
+//   closed: {
+//     clipPath: "inset(0% 0% 100% 0%)",
+//     opacity: 0,
+//     transition: {
+//       type: "spring",
+//       stiffness: 300,
+//       damping: 35,
+//       delay: 0,
+//       duration: 0,
+//     },
+//   },
+// };
+
+const sidebar = {
+  open: {
+    clipPath: "inset(0% 0% 0% 0%)",
+    opacity: 1,
+    transition: {
+      type: "tween", // use 'tween' for easing control
+      duration: 0.8, // total duration
+      ease: [0.42, 0, 1, 1], // cubic-bezier for slow to fast
+    },
+  },
+  closed: {
+    clipPath: "inset(0% 0% 100% 0%)",
+    opacity: 0,
+    transition: {
+      type: "tween",
+      duration: 0,
+      ease: "easeInOut",
+    },
+  },
+};
+
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("#home");
+
+  // Function to handle menu click (called by Navbar)
+  const clickedMenu = (menuName) => {
+    console.log("Clicked menu:", menuName);
+    setSelectedMenu(menuName);
+  };
   const experiences = [
     {
       side: "left",
@@ -297,124 +378,141 @@ management etc. as a part of FREELANCING activity.`,
     },
   ];
   return (
-    <div>
-      <Navbar />
-      <div
-        id="home"
-        className="flex justify-center max-w-[100vw] overflow-hidden items-center min-h-[100vh] md:min-h-[700px] pt-[80px] lg:pt-[150px] px-3 sm:px-4 lg:px-[initial]"
-      >
-        {/* <span class="ball"></span>
-        <span class="ball"></span>
-        <span class="ball"></span>
-        <span class="ball"></span>
-        <span class="ball"></span>
-        <span class="ball"></span> */}
-        <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
-          <div className="flex justify-start items-center lg:w-[50%]">
-            <div className="space-y-2 sm:space-y-4">
-              <div className="text-4xl sm:text-5xl font-extrabold ">
-                Towhid Ahmed
-              </div>
-              <div className="text-2xl sm:text-4xl font-bold flex">
-                I&apos;m{" "}
-                <div className="ml-2 text-[#55e00b]">
-                  <Typewriter
-                    options={{
-                      strings: roles,
-                      autoStart: true,
-                      loop: true,
-                      delay: 75,
-                      deleteSpeed: 50,
-                      pauseFor: 1500,
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="text-md sm:text-lg ">
-                My goal is to integrate social development of Bangladesh with
-                business, social initiatives, technology based entrepreneurships
-                and knowledge development. I invest my thoughts, ideas and
-                knowledge and expertise to help the society to become a better
-                place for living.
-              </div>
+    <div className="relative min-h-screen">
+      <Navbar onClickedMenu={clickedMenu} />
 
-              <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px] pt-3 pb-5">
-                <Link
-                  href={`/files_cus/Towhid-Ahmed.pdf`}
-                  className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 pt-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
-                  target="_blank"
-                  referrerPolicy="no-referrer"
-                >
-                  Download CV
-                </Link>
-
-                <Link
-                  href={
-                    "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
-                  }
-                  target="_blank"
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center py-3 px-3.5"
-                >
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    className="text-[#55e00b]"
-                  />
-                </Link>
-                <Link
-                  href={"https://www.facebook.com/towhid.ahmed"}
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                  target="_blank"
-                >
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    className="text-[#55e00b]"
-                  />
-                </Link>
-                <Link
-                  href="mailto:towhid.ahmed@gmail.com"
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                >
-                  <FontAwesomeIcon
-                    icon={faMailBulk}
-                    className="text-[#55e00b]"
-                  />
-                </Link>
-                <Link
-                  href="tel:+8801677880088"
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                >
-                  <FontAwesomeIcon icon={faPhone} className="text-[#55e00b]" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center lg:w-[50%]">
-            <div className="flex justify-center py-[25px] items-center">
-              <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
-                <div className="absolute inset-0 value-border-1 z-[1]"></div>
-
+      <AnimatePresence>
+        {selectedMenu && (
+         <motion.section
+  key={selectedMenu}
+  initial="closed"
+  animate="open"
+  exit="closed"
+  variants={sidebar}
+  className="absolute inset-0 w-full h-full z-30"
+>
+  <div
+    className="overflow-y-auto scroll-smooth"
+    style={{
+      WebkitOverflowScrolling: "touch",
+      overscrollBehavior: "contain",
+    }}
+  >
+              {selectedMenu === "#home" && (
                 <div
-                  className="absolute inset-1  z-[10] bg-[#ffffff] 
+                  id="home"
+                  className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white"
+                >
+                  <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
+                    <div className="flex justify-start items-center lg:w-[50%]">
+                      <div className="space-y-2 sm:space-y-4">
+                        <div className="text-4xl sm:text-5xl font-extrabold ">
+                          Towhid Ahmed
+                        </div>
+                        <div className="text-2xl sm:text-4xl font-bold flex">
+                          I&apos;m{" "}
+                          <div className="ml-2 text-[#55e00b]">
+                            <Typewriter
+                              options={{
+                                strings: roles,
+                                autoStart: true,
+                                loop: true,
+                                delay: 75,
+                                deleteSpeed: 50,
+                                pauseFor: 1500,
+                              }}
+                            />
+                          </div>
+                        </div>
+                        <div className="text-md sm:text-lg ">
+                          My goal is to integrate social development of
+                          Bangladesh with business, social initiatives,
+                          technology based entrepreneurships and knowledge
+                          development. I invest my thoughts, ideas and knowledge
+                          and expertise to help the society to become a better
+                          place for living.
+                        </div>
+
+                        <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px] pt-3 pb-5">
+                          <Link
+                            href={`/files_cus/Towhid-Ahmed.pdf`}
+                            className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                            target="_blank"
+                            referrerPolicy="no-referrer"
+                          >
+                            Download CV
+                          </Link>
+
+                          <Link
+                            href={
+                              "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
+                            }
+                            target="_blank"
+                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center py-3 px-3.5"
+                          >
+                            <FontAwesomeIcon
+                              icon={faLinkedin}
+                              className="text-[#55e00b]"
+                            />
+                          </Link>
+                          <Link
+                            href={"https://www.facebook.com/towhid.ahmed"}
+                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
+                            target="_blank"
+                          >
+                            <FontAwesomeIcon
+                              icon={faFacebook}
+                              className="text-[#55e00b]"
+                            />
+                          </Link>
+                          <Link
+                            href="mailto:towhid.ahmed@gmail.com"
+                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
+                          >
+                            <FontAwesomeIcon
+                              icon={faMailBulk}
+                              className="text-[#55e00b]"
+                            />
+                          </Link>
+                          <Link
+                            href="tel:+8801677880088"
+                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
+                          >
+                            <FontAwesomeIcon
+                              icon={faPhone}
+                              className="text-[#55e00b]"
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center items-center lg:w-[50%]">
+                      <div className="flex justify-center py-[25px] items-center">
+                        <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
+                          <div className="absolute inset-0 value-border-1 z-[1]"></div>
+
+                          <div
+                            className="absolute inset-1  z-[10] bg-[#ffffff] 
       w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px]
       text-xl sm:text-2xl flex justify-center items-center text-center p-3 ml-[0.7px] mt-[0.7px] overflow-hidden"
-                >
-                  <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
-                    <Image
-                      src={`/images_cus/profile_pic/me.png`}
-                      alt="Towhid Ahmed"
-                      width={80}
-                      height={80}
-                      className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
-                    />
+                          >
+                            <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
+                              <Image
+                                src={`/images_cus/profile_pic/me.png`}
+                                alt="Towhid Ahmed"
+                                width={80}
+                                height={80}
+                                className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        {/* <div className="container m-auto">
+                  {/* <div className="container m-auto">
           <div className="grid grid-cols-4 gap-7">
            <motion.div
   initial={{
@@ -470,294 +568,340 @@ management etc. as a part of FREELANCING activity.`,
             
           </div>
       </div> */}
-      </div>
-      <div className="px-3 sm:px-4 lg:px-[initial] ">
-        <div className="container m-auto  py-15 sm:py-20">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Specialities
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="lg:flex py-7 space-y-10 lg:space-y-0">
-            <div className="lg:w-[50%] space-y-5 ">
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">Project Management.</div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">
-                  Training & Facilitation.
                 </div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">Digital Marketing.</div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">Advertising.</div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">
-                  Event Management & Activation.
-                </div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">
-                  Marketing and Management consultancy.
-                </div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">
-                  Information & Communication Technology (ICT).
-                </div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">
-                  Video editing/production.
-                </div>
-              </div>
-              <div className="flex space-x-3 ">
-                <FontAwesomeIcon
-                  icon={faSnowflake}
-                  className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
-                />
-                <div className=" text-xl sm:text-2xl">Creative designs.</div>
-              </div>
-            </div>
-            <div className="lg:w-[50%] flex justify-center items-center ">
-              <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain md:rounded-br-3xl md:rounded-tl-3xl"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+              )}
 
-      <div id="background_preamp" className="px-3 sm:px-4 lg:px-[initial]">
-        <div className="container m-auto py-8 sm:py-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Background & Preamp
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div>
-            <motion.div
-              layout
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-             className="pt-7 pb-3 leading-relaxed text-justify"
-            >
-              <div className="lg:flex lg:justify-between lg:space-x-15 mb-5 ">
-                <div className="mb-3 lg:mb-0">
-                  <b>TOWHID AHMED</b> is the only son of Rafique Ahamed and one
-                  of the grand-sons of Late Bazal Ahmed Swadagar, one of the
-                  prominent industrialists of 1960’s and a great contributor of
-                  Chittagong. Rafique Ahamed is considered as an eminent
-                  personality of port city Chittagong for his social works,
-                  philanthropic initiatives, businesses, social networks,
-                  charity and remarkable qualities and public speaking
-                  abilities. Throughout his life, he dedicated himself for
-                  social causes and development and thus, founded a
-                  Non-Government Organization (NGO) named “MAMATA” in 1983. He's
-                  the eldest son of Late Bazal Ahmed Swadagar, the proud owner
-                  of BANGLADESH RICE MILLS and Industries of the then East
-                  Pakistan.
-                </div>
-
-                <Image
-                  src={`/images_cus/me/with-father.jpg`}
-                  alt="Towhid Ahmed"
-                  width={80}
-                  height={80}
-                  className="w-[400px] sm:w-[500px] lg:w-[400px] h-auto object-contain"
-                />
-              </div>
-
-              <div>
-                Rafique Ahamed received the prestigious Ekushey Podok for his
-                outstanding contribution in Socioeconomic Development in
-                Bangladesh. Mr. Ahamed is also a Life member of Lions Clubs
-                International and became the proud ‘District Governor’ of Lions
-                Clubs Intl. District 315 -B4 in 2003. He and his organization
-                MAMATA is the receiver of thirteen (16) National Awards which
-                includes "Best Social Worker", "Best Organization", “YUNESCO
-                AWARD 1992”, “Best Microfinance Institution” Award by Citi
-                Foundation” etc. and many international awards including “Melvin
-                Jones-Fellowship”. Following the roots and paths of father and
-                grand-father, Towhid Ahmed also involved himself in several
-                extra-curricular, social and youth driven activities since his
-                high school period. He was an active member, Executive Committee
-                member, Director and office bearer of LEO Clubs International:
-                District 315-B4, AIESEC (World’s largest student organization
-                with exchange program), North South University Social Services
-                Club (NSUSSC), Junior Chamber International (JCI) and Alumni
-                Association of North South University (AANSU). Towhid Ahmed
-                found his keen interest in Social Business models &
-                Entrepreneurships, Knowledge Sharing, Marketing & Communication
-                since his university period and thus involved himself at several
-                national and global case competitions and merit programs and
-                achieved “Order of Merit” at Global Academic Challenge 2008
-                organized by Marketing Agencies Associations Worldwide (MAAW).
-                After completing graduation from North South University, he
-                started his career at PR, Communication and Marketing Agencies.
-                He was an active and Organizing Committee member of the “Social
-                Business Forum-2012” and “Social Business Forum 2013” hosted at
-                North South University.
-                <div className="lg:flex lg:justify-between lg:space-x-5 ">
-                  <Image
-                    src={`/images_cus/me/IMG_9150.jpg`}
-                    alt="Towhid Ahmed"
-                    width={80}
-                    height={80}
-                    className="w-[400px] sm:w-[500px] lg:w-[350px] h-auto object-contain my-4"
-                  />
-                  <div className="mb-3 lg:mb-0">
-                    A notable feature of Towhid Ahmed is his connection and
-                    involvements with the most prominent public and private
-                    universities of Bangladesh including Chittagong University,
-                    Institute of Business Administration (IBA), Dhaka
-                    University, North South University, Brac University, East
-                    West University, American International
-                    University-Bangladesh, Premier University, East Delta
-                    University, United International University and University
-                    of Liberal Arts and Science for Volunteer Development
-                    programs, Youth Programs and Training Facilitations. He
-                    trained, facilitated and managed a brilliant pool of
-                    volunteers and liaison officers for 11th South Asian Games
-                    (Formerly known as SAF Games) Dhaka 2010 as a Trainer and
-                    Facilitator of ‘Volunteer Management Sub-Committee’ and also
-                    trained and developed volunteers and protocol officers for 1
-                    st World Marketing Summit 2012 that was held in Dhaka. In
-                    the year 2015, Towhid Ahmed got associated with development
-                    sector and joined MAMATA as a part of its Core Management
-                    Team.
+              {selectedMenu === "#specialities" && (
+                <div className="min-h-screen bg-white">
+                  <div className="container m-auto py-15 sm:py-20 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Specialities
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="lg:flex py-7 space-y-10 lg:space-y-0">
+                      <div className="lg:w-[50%] space-y-5 ">
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Project Management.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Training & Facilitation.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Digital Marketing.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Advertising.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Event Management & Activation.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Marketing and Management consultancy.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Information & Communication Technology (ICT).
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Video editing/production.
+                          </div>
+                        </div>
+                        <div className="flex space-x-3 ">
+                          <FontAwesomeIcon
+                            icon={faSnowflake}
+                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                          />
+                          <div className=" text-xl sm:text-2xl">
+                            Creative designs.
+                          </div>
+                        </div>
+                      </div>
+                      <div className="lg:w-[50%] flex justify-center items-center ">
+                        <Image
+                          src={`/images_cus/me/7.jpg`}
+                          alt="Towhid Ahmed"
+                          width={80}
+                          height={80}
+                          className=" w-[450px] lg:w-[300px] h-auto object-contain md:rounded-br-3xl md:rounded-tl-3xl"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-                MAMATA, very renowned in Bangladesh, is a social and
-                non-government organization committed to socio-economic
-                developments, health care services, poverty alleviation and
-                livelihood improvement of the disadvantaged people of the
-                society. MAMATA, over the period of 4 decades, has gradually
-                expanded it's activities in multi sectoral socioeconomic
-                development programs including TB and Malaria Control Program in
-                Bangladesh, Microfinance, Health Care Services including
-                Maternity and Child health care, Education for
-                {open && (
-                  <>
-                    {" "}
-                    underprivileged children and section of the society,
-                    ensuring pure drinking water and sanitation, Prevention of
-                    HIV/AIDS, Adolescents Health and Agriculture, Livestock &
-                    Fisheries, Women Workers Rights, Gender, Human Rights, Child
-                    Rights , Improvement of livelihood of Garments/RMG Workers.
-                    In an era where the world needs progressive future
-                    generation, Towhid Ahmed believes that children are the
-                    foundation of every nation’s growth and development
-                    aspirations, and must be at the center of any development
-                    initiatives including Right to Education and Proper
-                    Health-care facilities. Under the leadership and supervision
-                    of Mr. Towhid Ahmed, Mamata currently runs many programs and
-                    projects targeting Health care and Education sector.
-                    Programs and projects to be mentioned are “Mamata Health
-                    Program” and “Mamata Education Program”, “Mamata Sishu
-                    Surrokkha Kormosuchi”, “Shuchala”, “Health Care Services
-                    Delivery Project (HCSDP- CCPP)” with the objective of
-                    empowering underprivileged children by providing education,
-                    nutrition, and wellness support. The Program/Projects are
-                    well aligned to the Education Policy, and SDG Goal 4 (Ensure
-                    inclusive and equitable quality education and promote
-                    lifelong learning opportunities for all). Mamata works with
-                    children (6 months – 18 years) living in difficult
-                    circumstances, children from poor and marginalized families,
-                    disaster-struck and street children, children of RMG workers
-                    and children living in remote villages and hard to reach
-                    areas. In 2009, Mamata Bidyalaya was initiated to provide
-                    formal education, recreation and safety to the children of
-                    garment workers, marginalized and dropout children with the
-                    aim of improving the quality of life of children and their
-                    future. For 7 years, ECCD activities were being carried out
-                    by Mamata with her own funding and with the support of
-                    various donor organizations. The parents of these children
-                    were reluctant and somewhat depended on Mamata to mainstream
-                    their children into formal education taking this into
-                    consideration in 2016 Mr. Towhid Ahmed took initiative to
-                    impart formal education to children. To ensure that every
-                    child has the opportunity to access education especially the
-                    marginalized children and the children of RMG workers.
-                    Mamata Bidyalaya operates in its own building and this
-                    education program is fully funded by Mamata. In 2020, Mamata
-                    Biyalaya was renamed as Mamata School and College as the
-                    organization aims to expand this school into a college in
-                    the near future. Currently more than 500 students are
-                    enrolled in the School and the classroom facilities and all
-                    the cultural and recreational activities are adhered
-                    following the government directives under the overall
-                    supervision of Mr. Ahmed. Mamata had been implementing the
-                    “Children are protected from violence” project since June
-                    2013 with the support of Save the Children International.
-                    The long-term implementation of the project has played a
-                    significant role in ensuring the safety,security and proper
-                    development of vulnerable children in four wards of
-                    Chattogram City Coorporation (CCC). Mamata has made 4
-                    child-care spaces functional within the community to ensure
-                    childrens rights, positive attitude towards children,
-                    positive discipline practice, life skills, and ensuring
-                    their rights through various awareness sessions,
-                    accountability, and training. The project has phased out in
-                    December 2021, the project activities were widely accepted
-                    by the local community including children, adolescents,
-                    parents, teachers, religious leaders and various government
-                    stakeholders and the project created expectations among the
-                    population due to its effective role in ensuring child
-                    protection. Mr. Ahmed vision was to scale up this impact and
-                    hence Mamata decided to implement the program titled “Mamata
-                    Shishu Surokkha Kormosuchi” and continued the activities
-                    with the target audience.
-                  </>
-                )}
-              </div>
-            </motion.div>
-            <button
-              onClick={() => setOpen(!open)}
-              className="mt-3 text-[#55e00b] cursor-pointer font-semibold hover:underline transition"
-            >
-              {open ? "Read Less" : "Read More"}
-            </button>
-          </div>
-        </div>
-      </div>
-      <div id="career" className="px-3 sm:px-4 lg:px-[initial]">
+              )}
+
+              {selectedMenu === "#background_preamp" && (
+                <div className="min-h-screen bg-white">
+                  <div className="container m-auto py-8 sm:py-10 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Background & Preamp
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div>
+                      <motion.div
+                        layout
+                        transition={{ duration: 0.4, ease: "easeInOut" }}
+                        className="pt-7 pb-3 leading-relaxed text-justify"
+                      >
+                        <div className="lg:flex lg:justify-between lg:space-x-15 mb-5 ">
+                          <div className="mb-3 lg:mb-0">
+                            <b>TOWHID AHMED</b> is the only son of Rafique
+                            Ahamed and one of the grand-sons of Late Bazal Ahmed
+                            Swadagar, one of the prominent industrialists of
+                            1960’s and a great contributor of Chittagong.
+                            Rafique Ahamed is considered as an eminent
+                            personality of port city Chittagong for his social
+                            works, philanthropic initiatives, businesses, social
+                            networks, charity and remarkable qualities and
+                            public speaking abilities. Throughout his life, he
+                            dedicated himself for social causes and development
+                            and thus, founded a Non-Government Organization
+                            (NGO) named “MAMATA” in 1983. He's the eldest son of
+                            Late Bazal Ahmed Swadagar, the proud owner of
+                            BANGLADESH RICE MILLS and Industries of the then
+                            East Pakistan.
+                          </div>
+
+                          <Image
+                            src={`/images_cus/me/with-father.jpg`}
+                            alt="Towhid Ahmed"
+                            width={80}
+                            height={80}
+                            className="w-[400px] sm:w-[500px] lg:w-[400px] h-auto object-contain"
+                          />
+                        </div>
+
+                        <div>
+                          Rafique Ahamed received the prestigious Ekushey Podok
+                          for his outstanding contribution in Socioeconomic
+                          Development in Bangladesh. Mr. Ahamed is also a Life
+                          member of Lions Clubs International and became the
+                          proud ‘District Governor’ of Lions Clubs Intl.
+                          District 315 -B4 in 2003. He and his organization
+                          MAMATA is the receiver of thirteen (16) National
+                          Awards which includes "Best Social Worker", "Best
+                          Organization", “YUNESCO AWARD 1992”, “Best
+                          Microfinance Institution” Award by Citi Foundation”
+                          etc. and many international awards including “Melvin
+                          Jones-Fellowship”. Following the roots and paths of
+                          father and grand-father, Towhid Ahmed also involved
+                          himself in several extra-curricular, social and youth
+                          driven activities since his high school period. He was
+                          an active member, Executive Committee member, Director
+                          and office bearer of LEO Clubs International: District
+                          315-B4, AIESEC (World’s largest student organization
+                          with exchange program), North South University Social
+                          Services Club (NSUSSC), Junior Chamber International
+                          (JCI) and Alumni Association of North South University
+                          (AANSU). Towhid Ahmed found his keen interest in
+                          Social Business models & Entrepreneurships, Knowledge
+                          Sharing, Marketing & Communication since his
+                          university period and thus involved himself at several
+                          national and global case competitions and merit
+                          programs and achieved “Order of Merit” at Global
+                          Academic Challenge 2008 organized by Marketing
+                          Agencies Associations Worldwide (MAAW). After
+                          completing graduation from North South University, he
+                          started his career at PR, Communication and Marketing
+                          Agencies. He was an active and Organizing Committee
+                          member of the “Social Business Forum-2012” and “Social
+                          Business Forum 2013” hosted at North South University.
+                          <div className="lg:flex lg:justify-between lg:space-x-5 ">
+                            <Image
+                              src={`/images_cus/me/IMG_9150.jpg`}
+                              alt="Towhid Ahmed"
+                              width={80}
+                              height={80}
+                              className="w-[400px] sm:w-[500px] lg:w-[350px] h-auto object-contain my-4"
+                            />
+                            <div className="mb-3 lg:mb-0">
+                              A notable feature of Towhid Ahmed is his
+                              connection and involvements with the most
+                              prominent public and private universities of
+                              Bangladesh including Chittagong University,
+                              Institute of Business Administration (IBA), Dhaka
+                              University, North South University, Brac
+                              University, East West University, American
+                              International University-Bangladesh, Premier
+                              University, East Delta University, United
+                              International University and University of Liberal
+                              Arts and Science for Volunteer Development
+                              programs, Youth Programs and Training
+                              Facilitations. He trained, facilitated and managed
+                              a brilliant pool of volunteers and liaison
+                              officers for 11th South Asian Games (Formerly
+                              known as SAF Games) Dhaka 2010 as a Trainer and
+                              Facilitator of ‘Volunteer Management
+                              Sub-Committee’ and also trained and developed
+                              volunteers and protocol officers for 1 st World
+                              Marketing Summit 2012 that was held in Dhaka. In
+                              the year 2015, Towhid Ahmed got associated with
+                              development sector and joined MAMATA as a part of
+                              its Core Management Team.
+                            </div>
+                          </div>
+                          MAMATA, very renowned in Bangladesh, is a social and
+                          non-government organization committed to
+                          socio-economic developments, health care services,
+                          poverty alleviation and livelihood improvement of the
+                          disadvantaged people of the society. MAMATA, over the
+                          period of 4 decades, has gradually expanded it's
+                          activities in multi sectoral socioeconomic development
+                          programs including TB and Malaria Control Program in
+                          Bangladesh, Microfinance, Health Care Services
+                          including Maternity and Child health care, Education
+                          for
+                          {open && (
+                            <>
+                              {" "}
+                              underprivileged children and section of the
+                              society, ensuring pure drinking water and
+                              sanitation, Prevention of HIV/AIDS, Adolescents
+                              Health and Agriculture, Livestock & Fisheries,
+                              Women Workers Rights, Gender, Human Rights, Child
+                              Rights , Improvement of livelihood of Garments/RMG
+                              Workers. In an era where the world needs
+                              progressive future generation, Towhid Ahmed
+                              believes that children are the foundation of every
+                              nation’s growth and development aspirations, and
+                              must be at the center of any development
+                              initiatives including Right to Education and
+                              Proper Health-care facilities. Under the
+                              leadership and supervision of Mr. Towhid Ahmed,
+                              Mamata currently runs many programs and projects
+                              targeting Health care and Education sector.
+                              Programs and projects to be mentioned are “Mamata
+                              Health Program” and “Mamata Education Program”,
+                              “Mamata Sishu Surrokkha Kormosuchi”, “Shuchala”,
+                              “Health Care Services Delivery Project (HCSDP-
+                              CCPP)” with the objective of empowering
+                              underprivileged children by providing education,
+                              nutrition, and wellness support. The
+                              Program/Projects are well aligned to the Education
+                              Policy, and SDG Goal 4 (Ensure inclusive and
+                              equitable quality education and promote lifelong
+                              learning opportunities for all). Mamata works with
+                              children (6 months – 18 years) living in difficult
+                              circumstances, children from poor and marginalized
+                              families, disaster-struck and street children,
+                              children of RMG workers and children living in
+                              remote villages and hard to reach areas. In 2009,
+                              Mamata Bidyalaya was initiated to provide formal
+                              education, recreation and safety to the children
+                              of garment workers, marginalized and dropout
+                              children with the aim of improving the quality of
+                              life of children and their future. For 7 years,
+                              ECCD activities were being carried out by Mamata
+                              with her own funding and with the support of
+                              various donor organizations. The parents of these
+                              children were reluctant and somewhat depended on
+                              Mamata to mainstream their children into formal
+                              education taking this into consideration in 2016
+                              Mr. Towhid Ahmed took initiative to impart formal
+                              education to children. To ensure that every child
+                              has the opportunity to access education especially
+                              the marginalized children and the children of RMG
+                              workers. Mamata Bidyalaya operates in its own
+                              building and this education program is fully
+                              funded by Mamata. In 2020, Mamata Biyalaya was
+                              renamed as Mamata School and College as the
+                              organization aims to expand this school into a
+                              college in the near future. Currently more than
+                              500 students are enrolled in the School and the
+                              classroom facilities and all the cultural and
+                              recreational activities are adhered following the
+                              government directives under the overall
+                              supervision of Mr. Ahmed. Mamata had been
+                              implementing the “Children are protected from
+                              violence” project since June 2013 with the support
+                              of Save the Children International. The long-term
+                              implementation of the project has played a
+                              significant role in ensuring the safety,security
+                              and proper development of vulnerable children in
+                              four wards of Chattogram City Coorporation (CCC).
+                              Mamata has made 4 child-care spaces functional
+                              within the community to ensure childrens rights,
+                              positive attitude towards children, positive
+                              discipline practice, life skills, and ensuring
+                              their rights through various awareness sessions,
+                              accountability, and training. The project has
+                              phased out in December 2021, the project
+                              activities were widely accepted by the local
+                              community including children, adolescents,
+                              parents, teachers, religious leaders and various
+                              government stakeholders and the project created
+                              expectations among the population due to its
+                              effective role in ensuring child protection. Mr.
+                              Ahmed vision was to scale up this impact and hence
+                              Mamata decided to implement the program titled
+                              “Mamata Shishu Surokkha Kormosuchi” and continued
+                              the activities with the target audience.
+                            </>
+                          )}
+                        </div>
+                      </motion.div>
+                      <button
+                        onClick={() => setOpen(!open)}
+                        className="mt-3 text-[#55e00b] cursor-pointer font-semibold hover:underline transition"
+                      >
+                        {open ? "Read Less" : "Read More"}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </motion.section>
+        )}
+      </AnimatePresence>
+
+      {/* <div id="career" className="px-3 sm:px-4 lg:px-[initial] absolute top-0  max-h-0 w-[100vw] bg-white">
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Career
@@ -810,7 +954,7 @@ management etc. as a part of FREELANCING activity.`,
       </div>
       <div
         id="entrepreneurships_social_initiatives"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
+        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] bg-white"
       >
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -855,7 +999,7 @@ management etc. as a part of FREELANCING activity.`,
           </div>
         </div>
       </div>
-      <div id="education" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
+      <div id="education" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Education
@@ -898,7 +1042,7 @@ management etc. as a part of FREELANCING activity.`,
 
       <div
         id="conferences_seminars"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
+        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white"
       >
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -927,7 +1071,7 @@ management etc. as a part of FREELANCING activity.`,
 
       <div
         id="awards_achievements"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial]"
+        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white"
       >
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -966,7 +1110,7 @@ management etc. as a part of FREELANCING activity.`,
           </div>
         </div>
       </div>
-      <div id="gallery" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
+      <div id="gallery" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Gallery
@@ -1090,22 +1234,7 @@ management etc. as a part of FREELANCING activity.`,
                   </div>
                 </div>
               </SwiperSlide>
-              {/* <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={
-                      `/images_cus/gallery/380638.jpg`
-                    }
-                    alt="At Recitation and Discussion Program"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    At Recitation and Discussion Program
-                  </div>
-                </div>
-              </SwiperSlide> */}
+             
               <SwiperSlide>
                 <div className="w-full">
                   <Image
@@ -1261,8 +1390,8 @@ management etc. as a part of FREELANCING activity.`,
             </Swiper>
           </div>
         </div>
-      </div>
-      <div id="blog" className="pt-[40px] px-3 sm:px-4 lg:px-[initial]">
+      </div> */}
+      {/* <div id="blog" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
             Blog
@@ -1278,7 +1407,7 @@ management etc. as a part of FREELANCING activity.`,
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <div id="contact" className="pt-[50px] px-3 sm:px-4 lg:px-[initial]">
         <div className="container m-auto pb-8 sm:pb-10">
           <div className="text-3xl sm:text-4xl font-extrabold ">
@@ -1325,9 +1454,9 @@ management etc. as a part of FREELANCING activity.`,
           </div>
         </div>
       </div> */}
-      <div id="contact">
+      {/* <div id="contact absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 }
