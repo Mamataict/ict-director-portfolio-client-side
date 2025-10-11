@@ -17,71 +17,71 @@ const menu = [
   {
     label: "Home",
     icon: faHome,
-    key: "#home",
+    key: "home",
     linked: true,
     children: [],
   },
   {
     label: "About",
     icon: faPerson,
-    key: "#about",
-    linked: false,
+    key: "about",
+    linked: true,
     children: [
-      {
-        label: "SPECILITIES",
-        key: "#specialities",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "BACKGROUND & PREAMP",
-        key: "#background_preamp",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "CAREER",
-        key: "#career",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "ENTREPRENEURSHIPS & SOCIAL INITIATIVES",
-        key: "#entrepreneurships_social_initiatives",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "EDUCATION",
-        key: "#education",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "CONFERENCES & SEMINARS",
-        key: "#conferences_seminars",
-        linked: true,
-        children: [],
-      },
-      {
-        label: "AWARDS & ACHIEVEMENTS",
-        key: "#awards_achievements",
-        linked: true,
-        children: [],
-      },
+      // {
+      //   label: "SPECILITIES",
+      //   key: "specialities",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "BACKGROUND & PREAMP",
+      //   key: "background_preamp",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "CAREER",
+      //   key: "career",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "ENTREPRENEURSHIPS & SOCIAL INITIATIVES",
+      //   key: "entrepreneurships_social_initiatives",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "EDUCATION",
+      //   key: "education",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "CONFERENCES & SEMINARS",
+      //   key: "conferences_seminars",
+      //   linked: true,
+      //   children: [],
+      // },
+      // {
+      //   label: "AWARDS & ACHIEVEMENTS",
+      //   key: "awards_achievements",
+      //   linked: true,
+      //   children: [],
+      // },
     ],
   },
   {
     label: "Gallery",
     icon: faImage,
-    key: "#gallery",
+    key: "gallery",
     linked: true,
     children: [],
   },
   {
     label: "Blog",
     icon: faBlog,
-    key: "#blog",
+    key: "blog",
     linked: true,
     children: [],
   },
@@ -89,7 +89,7 @@ const menu = [
   {
     label: "Contact",
     icon: faPhone,
-    key: "#contact",
+    key: "contact",
     linked: true,
     children: [],
   },
@@ -107,7 +107,7 @@ const Navbar = ({ onClickedMenu }) => {
       >
         <div className="container m-auto flex items-center justify-between h-full w-full">
         
-          <ul className="lg:block flex justify-between w-full space-y-2 lg:space-y-5 ">
+          <ul className="lg:block flex justify-between w-full space-y-2 lg:space-y-5 lg:pl-10">
             {menu.map(({ label, icon, key, linked, children }) => (
               <li key={key} className="relative group text-[20px] h-12 w-12 mx-auto">
                 <div

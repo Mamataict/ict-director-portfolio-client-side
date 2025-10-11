@@ -37,9 +37,10 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="py-3 px-2 md:px-[initial]">
-        <div className="container m-auto md:flex md:justify-between py-10 gap-3 space-y-8 md:space-y-0">
-          <div className="w-full md:w-[40%] pb-10 md:pb-[initial] space-y-2">
+      <div className="py-10 sm:py-5 px-2 md:px-[initial]">
+        <div className="container m-auto
+         py-10  space-y-10 ">
+          {/* <div className="w-full md:w-[40%] pb-10 md:pb-[initial] space-y-2">
             <div className="text-[35px] sm:text-[40px] font-bold ">
               TOWHID AHMED
             </div>
@@ -86,19 +87,20 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className="w-full md:w-[40%] pb-10 md:pb-[initial]">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 ">
+          </div> */}
+          
+          <div className="w-full pb-10 md:pb-[initial]">
+            <div className="border-l-[#5CB22D] border-l-3 px-3 text-4xl mb-4 ">
               Contact Info
             </div>
-            <div className="space-y-3">
+            <div className="space-y-3 text-lg">
               <div className="flex space-x-2">
                 <FontAwesomeIcon
                   icon={faLocationDot}
                   color="white"
                   className="mt-1"
                 />
-                <div className="">
+                <div>
                   “Boro-Bari”, 13, Rashid Building 1st lane, Banglabazar,
                   Chittagong.
                 </div>
@@ -121,8 +123,8 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-[20%] ">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-2xl mb-4 ">
+          <div className="w-full ">
+            <div className="border-l-[#5CB22D] border-l-3 px-3 text-4xl mb-6 ">
               Contact Form
             </div>
             <form onSubmit={handleSubmit} className=" space-y-2 max-w-[250px]">
@@ -163,13 +165,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white/35 py-3 px-8 sm:px-[initial]">
+      {/* <div className="bg-white/35 py-3 px-8 sm:px-[initial]">
         <div className="container m-auto  text-[14px] text-center sm:flex sm:justify-between justify-center items-center sm:items-start">
           <div className="pb-2 sm:pb-[initial]">
             © Copyright <b>Towhid Ahmed</b>. All rights reserved.
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

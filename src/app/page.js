@@ -21,7 +21,7 @@ import Link from "next/link";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "typewriter-effect";
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const roles = [
   "Young Entrepreneur",
@@ -35,87 +35,28 @@ const roles = [
   "Branding Consultant",
 ];
 
-// const sidebar = {
-//   open: {
-//     clipPath: "inset(0% 0% 0% 0%)",
-//     transition: {
-//       type: "spring",
-//       stiffness: 80,
-//       damping: 25,
-//       restDelta: 0.001,
-//     },
-//     opacity: 1, transition: { duration: 0.3 }
-//   },
-//   closed: {
-//     clipPath: "inset(0% 0% 100% 0%)",
-//     transition: {
-//       type: "spring",
-//       stiffness: 300,
-//       damping: 35,
-//       delay: 0.15,
-//     },
-//     opacity: 0, transition: { duration: 0.3 }
-//   },
-// };
-
-// const sidebar = {
-//   open: { opacity: 1, transition: { duration: 0.3 } },
-//   closed: { opacity: 0, transition: { duration: 0.3 } },
-// };
-
-// const sidebar = {
-//   open: {
-//     clipPath: "inset(0% 0% 0% 0%)",
-//     opacity: 1,
-//     transition: {
-//       type: "spring",
-//       stiffness: 80,
-//       damping: 25,
-//       restDelta: 0.001,
-//       duration: 0.6,
-//     },
-//   },
-//   closed: {
-//     clipPath: "inset(0% 0% 100% 0%)",
-//     opacity: 0,
-//     transition: {
-//       type: "spring",
-//       stiffness: 300,
-//       damping: 35,
-//       delay: 0,
-//       duration: 0,
-//     },
-//   },
-// };
-
-const sidebar = {
+const contentAnimation = {
   open: {
-    clipPath: "inset(0% 0% 0% 0%)",
     opacity: 1,
+    y: 0,
     transition: {
-      type: "tween", // use 'tween' for easing control
-      duration: 0.8, // total duration
-      ease: [0.42, 0, 1, 1], // cubic-bezier for slow to fast
+      duration: 0.8,
     },
   },
   closed: {
-    clipPath: "inset(0% 0% 100% 0%)",
     opacity: 0,
+    y: -2000,
     transition: {
-      type: "tween",
       duration: 0,
-      ease: "easeInOut",
     },
   },
 };
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState("#home");
+  const [openMore, setOpenMore] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("home");
 
-  // Function to handle menu click (called by Navbar)
   const clickedMenu = (menuName) => {
-    console.log("Clicked menu:", menuName);
     setSelectedMenu(menuName);
   };
   const experiences = [
@@ -377,203 +318,148 @@ management etc. as a part of FREELANCING activity.`,
         "Had control over the whole financial transactions of the club and had to collect the club dues from the members and the directors.",
     },
   ];
+
   return (
     <div className="relative min-h-screen">
       <Navbar onClickedMenu={clickedMenu} />
 
       <AnimatePresence>
         {selectedMenu && (
-         <motion.section
-  key={selectedMenu}
-  initial="closed"
-  animate="open"
-  exit="closed"
-  variants={sidebar}
-  className="absolute inset-0 w-full h-full z-30"
->
-  <div
-    className="overflow-y-auto scroll-smooth"
-    style={{
-      WebkitOverflowScrolling: "touch",
-      overscrollBehavior: "contain",
-    }}
-  >
-              {selectedMenu === "#home" && (
-                <div
-                  id="home"
-                  className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white"
+          <>
+            {selectedMenu === "home" && (
+              <div className="h-fit w-full">
+                <motion.section
+                  key={selectedMenu}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={contentAnimation}
+                  className="bg-white min-h-screen px-2 lg:px-20"
                 >
-                  <div className="container m-auto flex flex-col-reverse lg:flex-row justify-center items-center space-x-5 ">
-                    <div className="flex justify-start items-center lg:w-[50%]">
-                      <div className="space-y-2 sm:space-y-4">
-                        <div className="text-4xl sm:text-5xl font-extrabold ">
-                          Towhid Ahmed
-                        </div>
-                        <div className="text-2xl sm:text-4xl font-bold flex">
-                          I&apos;m{" "}
-                          <div className="ml-2 text-[#55e00b]">
-                            <Typewriter
-                              options={{
-                                strings: roles,
-                                autoStart: true,
-                                loop: true,
-                                delay: 75,
-                                deleteSpeed: 50,
-                                pauseFor: 1500,
-                              }}
-                            />
-                          </div>
-                        </div>
-                        <div className="text-md sm:text-lg ">
-                          My goal is to integrate social development of
-                          Bangladesh with business, social initiatives,
-                          technology based entrepreneurships and knowledge
-                          development. I invest my thoughts, ideas and knowledge
-                          and expertise to help the society to become a better
-                          place for living.
-                        </div>
+                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white">
+                    <div className="container m-auto flex flex-col lg:flex-row justify-center items-center space-x-5 ">
+                      <div className="flex justify-center items-center lg:w-[50%]">
+                        <div className="flex justify-center py-[25px] items-center">
+                          <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
+                            <div className="absolute inset-0 value-border-1 z-[1]"></div>
 
-                        <div className="flex space-x-2 sm:space-x-5 mt-[30px] sm:mt-[20px] pt-3 pb-5">
-                          <Link
-                            href={`/files_cus/Towhid-Ahmed.pdf`}
-                            className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
-                            target="_blank"
-                            referrerPolicy="no-referrer"
-                          >
-                            Download CV
-                          </Link>
-
-                          <Link
-                            href={
-                              "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
-                            }
-                            target="_blank"
-                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center py-3 px-3.5"
-                          >
-                            <FontAwesomeIcon
-                              icon={faLinkedin}
-                              className="text-[#55e00b]"
-                            />
-                          </Link>
-                          <Link
-                            href={"https://www.facebook.com/towhid.ahmed"}
-                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                            target="_blank"
-                          >
-                            <FontAwesomeIcon
-                              icon={faFacebook}
-                              className="text-[#55e00b]"
-                            />
-                          </Link>
-                          <Link
-                            href="mailto:towhid.ahmed@gmail.com"
-                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                          >
-                            <FontAwesomeIcon
-                              icon={faMailBulk}
-                              className="text-[#55e00b]"
-                            />
-                          </Link>
-                          <Link
-                            href="tel:+8801677880088"
-                            className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3"
-                          >
-                            <FontAwesomeIcon
-                              icon={faPhone}
-                              className="text-[#55e00b]"
-                            />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex justify-center items-center lg:w-[50%]">
-                      <div className="flex justify-center py-[25px] items-center">
-                        <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
-                          <div className="absolute inset-0 value-border-1 z-[1]"></div>
-
-                          <div
-                            className="absolute inset-1  z-[10] bg-[#ffffff] 
+                            <div
+                              className="absolute inset-1  z-[10] bg-[#ffffff] 
       w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px]
       text-xl sm:text-2xl flex justify-center items-center text-center p-3 ml-[0.7px] mt-[0.7px] overflow-hidden"
-                          >
-                            <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
-                              <Image
-                                src={`/images_cus/profile_pic/me.png`}
-                                alt="Towhid Ahmed"
-                                width={80}
-                                height={80}
-                                className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
+                            >
+                              <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
+                                <Image
+                                  src={`/images_cus/profile_pic/me.png`}
+                                  alt="Towhid Ahmed"
+                                  width={80}
+                                  height={80}
+                                  className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex justify-start items-center lg:w-[50%]">
+                        <div className="space-y-2 sm:space-y-4">
+                          <div className="text-4xl sm:text-5xl font-extrabold ">
+                            Towhid Ahmed
+                          </div>
+                          <div className="text-2xl sm:text-4xl font-bold flex">
+                            I&apos;m{" "}
+                            <div className="ml-2 text-[#55e00b]">
+                              <Typewriter
+                                options={{
+                                  strings: roles,
+                                  autoStart: true,
+                                  loop: true,
+                                  delay: 75,
+                                  deleteSpeed: 50,
+                                  pauseFor: 1500,
+                                }}
                               />
                             </div>
+                          </div>
+                          <div className="text-md sm:text-lg ">
+                            My goal is to integrate social development of
+                            Bangladesh with business, social initiatives,
+                            technology based entrepreneurships and knowledge
+                            development. I invest my thoughts, ideas and
+                            knowledge and expertise to help the society to
+                            become a better place for living.
+                          </div>
+
+                          <div className="flex space-x-2 sm:space-x-3 mt-[30px] sm:mt-[20px] pt-3 pb-5">
+                            <Link
+                              href={`/files_cus/Towhid-Ahmed.pdf`}
+                              className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                              target="_blank"
+                              referrerPolicy="no-referrer"
+                            >
+                              Download CV
+                            </Link>
+
+                            <Link
+                              href={
+                                "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
+                              }
+                              target="_blank"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                            >
+                              <FontAwesomeIcon
+                                icon={faLinkedin}
+                                className="text-[#55e00b] text-xl"
+                              />
+                            </Link>
+                            <Link
+                              href={"https://www.facebook.com/towhid.ahmed"}
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                              target="_blank"
+                            >
+                              <FontAwesomeIcon
+                                icon={faFacebook}
+                                className="text-[#55e00b] text-xl"
+                              />
+                            </Link>
+                            <Link
+                              href="mailto:towhid.ahmed@gmail.com"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                            >
+                              <FontAwesomeIcon
+                                icon={faMailBulk}
+                                className="text-[#55e00b] text-md"
+                              />
+                            </Link>
+                            <Link
+                              href="tel:+8801677880088"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                            >
+                              <FontAwesomeIcon
+                                icon={faPhone}
+                                className="text-[#55e00b] text-xl"
+                              />
+                            </Link>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </motion.section>
+              </div>
+            )}
 
-                  {/* <div className="container m-auto">
-          <div className="grid grid-cols-4 gap-7">
-           <motion.div
-  initial={{
-    opacity: 0,
-    x: 200,   // start off-screen to the right
-    y: -150,  // start off-screen above
-    rotate: 15, // angled like turning in
-  }}
-  animate={{
-    opacity: 1,
-    x: 0,
-    y: 0,
-    rotate: 0,
-  }}
-  transition={{
-    type: "spring",
-    stiffness: 80,
-    damping: 12,
-    duration: 1.2,
-  }}
-  className="flex justify-center items-center"
->
-
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
-            </motion.div>
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
-            <Image
-                src={`/images_cus/me/7.jpg`}
-                alt="Towhid Ahmed"
-                width={80}
-                height={80}
-                className=" w-[450px] lg:w-[300px] h-auto object-contain rotate-20"
-              />
-            
-          </div>
-      </div> */}
-                </div>
-              )}
-
-              {selectedMenu === "#specialities" && (
-                <div className="min-h-screen bg-white">
-                  <div className="container m-auto py-15 sm:py-20 ">
+            {selectedMenu === "about" && (
+              <div className="h-fit w-full">
+                <motion.section
+                  key={selectedMenu}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={contentAnimation}
+                  className="bg-white min-h-screen px-2 lg:px-20"
+                >
+                  <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Specialities
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
@@ -673,12 +559,8 @@ management etc. as a part of FREELANCING activity.`,
                       </div>
                     </div>
                   </div>
-                </div>
-              )}
 
-              {selectedMenu === "#background_preamp" && (
-                <div className="min-h-screen bg-white">
-                  <div className="container m-auto py-8 sm:py-10 ">
+                  <div className="container m-auto py-12">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Background & Preamp
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
@@ -796,31 +678,29 @@ management etc. as a part of FREELANCING activity.`,
                           programs including TB and Malaria Control Program in
                           Bangladesh, Microfinance, Health Care Services
                           including Maternity and Child health care, Education
-                          for
-                          {open && (
+                          for underprivileged children and section of the
+                          society, ensuring
+                          {openMore && (
                             <>
-                              {" "}
-                              underprivileged children and section of the
-                              society, ensuring pure drinking water and
-                              sanitation, Prevention of HIV/AIDS, Adolescents
-                              Health and Agriculture, Livestock & Fisheries,
-                              Women Workers Rights, Gender, Human Rights, Child
-                              Rights , Improvement of livelihood of Garments/RMG
-                              Workers. In an era where the world needs
-                              progressive future generation, Towhid Ahmed
-                              believes that children are the foundation of every
-                              nation’s growth and development aspirations, and
-                              must be at the center of any development
-                              initiatives including Right to Education and
-                              Proper Health-care facilities. Under the
-                              leadership and supervision of Mr. Towhid Ahmed,
-                              Mamata currently runs many programs and projects
-                              targeting Health care and Education sector.
-                              Programs and projects to be mentioned are “Mamata
-                              Health Program” and “Mamata Education Program”,
-                              “Mamata Sishu Surrokkha Kormosuchi”, “Shuchala”,
-                              “Health Care Services Delivery Project (HCSDP-
-                              CCPP)” with the objective of empowering
+                              pure drinking water and sanitation, Prevention of
+                              HIV/AIDS, Adolescents Health and Agriculture,
+                              Livestock & Fisheries, Women Workers Rights,
+                              Gender, Human Rights, Child Rights , Improvement
+                              of livelihood of Garments/RMG Workers. In an era
+                              where the world needs progressive future
+                              generation, Towhid Ahmed believes that children
+                              are the foundation of every nation’s growth and
+                              development aspirations, and must be at the center
+                              of any development initiatives including Right to
+                              Education and Proper Health-care facilities. Under
+                              the leadership and supervision of Mr. Towhid
+                              Ahmed, Mamata currently runs many programs and
+                              projects targeting Health care and Education
+                              sector. Programs and projects to be mentioned are
+                              “Mamata Health Program” and “Mamata Education
+                              Program”, “Mamata Sishu Surrokkha Kormosuchi”,
+                              “Shuchala”, “Health Care Services Delivery Project
+                              (HCSDP- CCPP)” with the objective of empowering
                               underprivileged children by providing education,
                               nutrition, and wellness support. The
                               Program/Projects are well aligned to the Education
@@ -885,578 +765,599 @@ management etc. as a part of FREELANCING activity.`,
                             </>
                           )}
                         </div>
+
+                        <button
+                          onClick={() => setOpenMore(!openMore)}
+                          className="text-green-600 mt-4 cursor-pointer"
+                        >
+                          {openMore ? "See Less" : "See More"}
+                        </button>
                       </motion.div>
-                      <button
-                        onClick={() => setOpen(!open)}
-                        className="mt-3 text-[#55e00b] cursor-pointer font-semibold hover:underline transition"
-                      >
-                        {open ? "Read Less" : "Read More"}
-                      </button>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          </motion.section>
+
+                  <div className="container m-auto py-12 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Career
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="py-7">
+                      <div className="leading-relaxed ">
+                        Currently, Towhid Ahmed is serving as a Director of
+                        MAMATA, a social and non-government organization
+                        committed to socio-economic developments, health care
+                        services, poverty alleviation and livelihood improvement
+                        of the disadvantaged people of the society.
+                      </div>
+                      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-6">
+                        {experiences.map((exp, index) => (
+                          <div
+                            key={index}
+                            className={` ${
+                              exp.side === "left"
+                                ? "md:col-start-1 "
+                                : "md:col-start-2"
+                            }`}
+                          >
+                            <div className="flex gap-2">
+                              <div>
+                                <FontAwesomeIcon
+                                  icon={faStarOfLife}
+                                  className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                />
+                              </div>
+                              <div className="">
+                                <h3 className="font-semibold text-lg ">
+                                  {exp.title}
+                                </h3>
+                                {exp.date && (
+                                  <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md my-2">
+                                    {exp.date}
+                                  </p>
+                                )}
+                                {exp.description && (
+                                  <p className="italic  mt-1">
+                                    {exp.description}
+                                  </p>
+                                )}
+                                <ul className="list-disc list-inside mt-3  space-y-1">
+                                  {exp.points?.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="container m-auto py-12 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Entrepreneurship & Social Initiatives
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
+                      {entrepreneurship_social_init.map((exp, index) => (
+                        <div
+                          key={index}
+                          className={` ${
+                            exp.side === "left"
+                              ? "md:col-start-1 "
+                              : "md:col-start-2"
+                          }`}
+                        >
+                          <div className="flex gap-2">
+                            <div>
+                              <FontAwesomeIcon
+                                icon={faCircleDot}
+                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                              />
+                            </div>
+                            <div className="">
+                              <h3 className="text-lg sm:text-xl font-bold ">
+                                {exp.title}
+                              </h3>
+
+                              <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
+                                {exp.date}
+                              </p>
+
+                              <p className="italic mt-3 font-semibold ">
+                                {exp.role}
+                              </p>
+                              {exp.link && (
+                                <p className="italic  hover:underline">
+                                  {exp.link}
+                                </p>
+                              )}
+                              {exp.location && (
+                                <p className="italic ">{exp.location}</p>
+                              )}
+
+                              <p className=" mt-3 leading-relaxed">
+                                {exp.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="container m-auto py-12 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Education
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-7">
+                      {education.map((exp, index) => (
+                        <div
+                          key={index}
+                          className={` ${
+                            exp.side === "left"
+                              ? "md:col-start-1 "
+                              : "md:col-start-2"
+                          }`}
+                        >
+                          <div className="flex gap-2">
+                            <div>
+                              <FontAwesomeIcon
+                                icon={faGraduationCap}
+                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                              />
+                            </div>
+                            <div className="">
+                              <h3 className="text-lg sm:text-xl font-bold ">
+                                {exp.title}
+                              </h3>
+                              <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
+                                {exp.date}
+                              </p>
+                              <p className="italic mt-3 font-semibold ">
+                                {exp.institution}
+                              </p>
+
+                              {exp.location && (
+                                <p className="italic ">{exp.location}</p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="container m-auto py-12 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Conferences & Seminars
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative space-y-2 py-7">
+                      {conferences_seminars.map((exp, index) => (
+                        <div key={index}>
+                          <div className="flex gap-2">
+                            <div>
+                              <FontAwesomeIcon
+                                icon={faStar}
+                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                              />
+                            </div>
+                            <div className="">
+                              <h3 className="text-lg sm:text-lg font-bold ">
+                                {exp}
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="container m-auto py-12 ">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Awards & Achievements
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-13">
+                      {awards_achievements.map((exp, index) => (
+                        <div
+                          key={index}
+                          className={` ${
+                            exp.side === "left"
+                              ? "md:col-start-1 "
+                              : "md:col-start-2"
+                          }`}
+                        >
+                          <div className="flex gap-2">
+                            <div>
+                              <FontAwesomeIcon
+                                icon={faCircleDot}
+                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                              />
+                            </div>
+                            <div className="">
+                              <h3 className="text-lg sm:text-xl font-bold ">
+                                {exp.title}
+                              </h3>
+
+                              <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
+                                {exp.dates}
+                              </p>
+
+                              <p className=" mt-3 leading-relaxed">
+                                {exp.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.section>
+              </div>
+            )}
+
+            {selectedMenu === "gallery" && (
+              <div className="h-fit w-full">
+                <motion.section
+                  key={selectedMenu}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={contentAnimation}
+                  className="bg-white min-h-screen px-2 lg:px-20"
+                >
+                  <div className="container m-auto py-15 sm:py-15">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Gallery
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative pt-13">
+                      <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                          delay: 2500,
+                          disableOnInteraction: false,
+                        }}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        // autoHeight={true}
+                        navigation={true}
+                        modules={[Autoplay, Navigation]}
+                        className="mySwiper swiper-gallery w-full md:w-[80%] lg:w-[60%]"
+                      >
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/304120.jpg`}
+                              alt="With Nepal Team Visit in Bangladesh"
+                              width={100}
+                              height={100}
+                              className=" w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              With Nepal Team Visit in Bangladesh
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/484460.jpg`}
+                              alt="Interview Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Interview Time
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/990866.jpg`}
+                              alt="With Yeameen Yusuf Ahmed"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              With Yeameen Yusuf Ahmed
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/150272.jpg`}
+                              alt="Birthday Celebration"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Birthday Celebration
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/508548.jpg`}
+                              alt="Refreshment Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Refreshment Time
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/357943.jpg`}
+                              alt="Refreshment Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Refreshment Time
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/876785.jpg`}
+                              alt="At Office"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">At Office</div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/484131.jpg`}
+                              alt="At Recitation and Discussion Program"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              At Recitation and Discussion Program
+                            </div>
+                          </div>
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/821219.jpg`}
+                              alt="Family Legacy"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">Family Legacy</div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/669931.jpg`}
+                              alt="Twelve Years of BBF Program"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Twelve Years of BBF Program
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/507560.jpg`}
+                              alt="Inauguration of Mamata Dairy Farm"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Inauguration of Mamata Dairy Farm
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/868597.jpg`}
+                              alt="Office Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">Office Time</div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/796879.jpg`}
+                              alt="With Ayub Bachchu"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              With Ayub Bachchu
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/810927.jpg`}
+                              alt="With Ayub Bachchu"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              With Ayub Bachchu
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/746056.jpg`}
+                              alt="Mamata Dairy Farm Visit"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Mamata Dairy Farm Visit
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/726457.jpg`}
+                              alt="Meeting with Health Program"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Meeting with Health Program
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/948003.jpg`}
+                              alt="Office Time at meeting"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Office Time at meeting
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/476297.jpg`}
+                              alt="At MAMATA Dairy Farm"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              At MAMATA Dairy Farm
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/289523.jpg`}
+                              alt="Group work facilitation."
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Group work facilitation.
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <div className="w-full">
+                            <Image
+                              src={`/images_cus/gallery/542355.jpg`}
+                              alt="Office time. Meetings."
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Office time. Meetings.
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      </Swiper>
+                    </div>
+                  </div>
+                </motion.section>
+              </div>
+            )}
+
+            {selectedMenu === "blog" && (
+              <div className="h-fit w-full">
+                <motion.section
+                  key={selectedMenu}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={contentAnimation}
+                  className="bg-white min-h-screen px-2 lg:px-20"
+                >
+                  <div className="container m-auto py-15 sm:py-15">
+                    <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
+                      Blog
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                    </div>
+                    <div className="relative py-13">
+                      <div
+                        className="bg-yellow-50 border-l-4 border-b-2 border-[#5CB22D] text-[#5CB22D] p-4 "
+                        role="alert"
+                      >
+                        <p className="font-bold">Not found</p>
+                        <p>Keep connected for amazing blogs.</p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.section>
+              </div>
+            )}
+
+            {selectedMenu === "contact" && (
+              <div className="h-fit w-full ">
+                <motion.section
+                  key={selectedMenu}
+                  initial="closed"
+                  animate="open"
+                  exit="closed"
+                  variants={contentAnimation}
+                  className="bg-white min-h-screen px-2 lg:px-20"
+                >
+                  <Footer />
+                </motion.section>
+              </div>
+            )}
+          </>
         )}
       </AnimatePresence>
-
-      {/* <div id="career" className="px-3 sm:px-4 lg:px-[initial] absolute top-0  max-h-0 w-[100vw] bg-white">
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Career
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="py-7">
-            <div className="leading-relaxed ">
-              Currently, Towhid Ahmed is serving as a Director of MAMATA, a
-              social and non-government organization committed to socio-economic
-              developments, health care services, poverty alleviation and
-              livelihood improvement of the disadvantaged people of the society.
-            </div>
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-6">
-              {experiences.map((exp, index) => (
-                <div
-                  key={index}
-                  className={` ${
-                    exp.side === "left" ? "md:col-start-1 " : "md:col-start-2"
-                  }`}
-                >
-                  <div className="flex gap-2">
-                    <div>
-                      <FontAwesomeIcon
-                        icon={faStarOfLife}
-                        className="text-[#55e00b] text-lg sm:text-xl mt-1"
-                      />
-                    </div>
-                    <div className="">
-                      <h3 className="font-semibold text-lg ">{exp.title}</h3>
-                      {exp.date && (
-                        <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md my-2">
-                          {exp.date}
-                        </p>
-                      )}
-                      {exp.description && (
-                        <p className="italic  mt-1">{exp.description}</p>
-                      )}
-                      <ul className="list-disc list-inside mt-3  space-y-1">
-                        {exp.points?.map((point, i) => (
-                          <li key={i}>{point}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        id="entrepreneurships_social_initiatives"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] bg-white"
-      >
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Entrepreneurship & Social Initiatives
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
-            {entrepreneurship_social_init.map((exp, index) => (
-              <div
-                key={index}
-                className={` ${
-                  exp.side === "left" ? "md:col-start-1 " : "md:col-start-2"
-                }`}
-              >
-                <div className="flex gap-2">
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faCircleDot}
-                      className="text-[#55e00b] text-lg sm:text-xl mt-1"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold ">
-                      {exp.title}
-                    </h3>
-
-                    <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
-                      {exp.date}
-                    </p>
-
-                    <p className="italic mt-3 font-semibold ">{exp.role}</p>
-                    {exp.link && (
-                      <p className="italic  hover:underline">{exp.link}</p>
-                    )}
-                    {exp.location && <p className="italic ">{exp.location}</p>}
-
-                    <p className=" mt-3 leading-relaxed">{exp.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div id="education" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Education
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-7">
-            {education.map((exp, index) => (
-              <div
-                key={index}
-                className={` ${
-                  exp.side === "left" ? "md:col-start-1 " : "md:col-start-2"
-                }`}
-              >
-                <div className="flex gap-2">
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faGraduationCap}
-                      className="text-[#55e00b] text-lg sm:text-xl mt-1"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold ">
-                      {exp.title}
-                    </h3>
-                    <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
-                      {exp.date}
-                    </p>
-                    <p className="italic mt-3 font-semibold ">
-                      {exp.institution}
-                    </p>
-
-                    {exp.location && <p className="italic ">{exp.location}</p>}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="conferences_seminars"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white"
-      >
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Conferences & Seminars
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative space-y-2 py-7">
-            {conferences_seminars.map((exp, index) => (
-              <div key={index}>
-                <div className="flex gap-2">
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="text-[#55e00b] text-lg sm:text-xl mt-1"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-lg sm:text-lg font-bold ">{exp}</h3>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div
-        id="awards_achievements"
-        className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white"
-      >
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Awards & Achievements
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-13">
-            {awards_achievements.map((exp, index) => (
-              <div
-                key={index}
-                className={` ${
-                  exp.side === "left" ? "md:col-start-1 " : "md:col-start-2"
-                }`}
-              >
-                <div className="flex gap-2">
-                  <div>
-                    <FontAwesomeIcon
-                      icon={faCircleDot}
-                      className="text-[#55e00b] text-lg sm:text-xl mt-1"
-                    />
-                  </div>
-                  <div className="">
-                    <h3 className="text-lg sm:text-xl font-bold ">
-                      {exp.title}
-                    </h3>
-
-                    <p className="inline-block bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-md mt-2">
-                      {exp.dates}
-                    </p>
-
-                    <p className=" mt-3 leading-relaxed">{exp.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div id="gallery" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Gallery
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative pt-13">
-            <Swiper
-              spaceBetween={30}
-              centeredSlides={true}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              // autoHeight={true}
-              navigation={true}
-              modules={[Autoplay, Navigation]}
-              className="mySwiper swiper-gallery w-full md:w-[80%] lg:w-[60%]"
-            >
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/304120.jpg`}
-                    alt="With Nepal Team Visit in Bangladesh"
-                    width={100}
-                    height={100}
-                    className=" w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    With Nepal Team Visit in Bangladesh
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/484460.jpg`}
-                    alt="Interview Time"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Interview Time</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/990866.jpg`}
-                    alt="With Yeameen Yusuf Ahmed"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    With Yeameen Yusuf Ahmed
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/150272.jpg`}
-                    alt="Birthday Celebration"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Birthday Celebration</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/508548.jpg`}
-                    alt="Refreshment Time"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Refreshment Time</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/357943.jpg`}
-                    alt="Refreshment Time"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Refreshment Time</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/876785.jpg`}
-                    alt="At Office"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">At Office</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/484131.jpg`}
-                    alt="At Recitation and Discussion Program"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    At Recitation and Discussion Program
-                  </div>
-                </div>
-              </SwiperSlide>
-             
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/821219.jpg`}
-                    alt="Family Legacy"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Family Legacy</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/669931.jpg`}
-                    alt="Twelve Years of BBF Program"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    Twelve Years of BBF Program
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/507560.jpg`}
-                    alt="Inauguration of Mamata Dairy Farm"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    Inauguration of Mamata Dairy Farm
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/868597.jpg`}
-                    alt="Office Time"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Office Time</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/796879.jpg`}
-                    alt="With Ayub Bachchu"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">With Ayub Bachchu</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/810927.jpg`}
-                    alt="With Ayub Bachchu"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">With Ayub Bachchu</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/746056.jpg`}
-                    alt="Mamata Dairy Farm Visit"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Mamata Dairy Farm Visit</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/726457.jpg`}
-                    alt="Meeting with Health Program"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    Meeting with Health Program
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/948003.jpg`}
-                    alt="Office Time at meeting"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Office Time at meeting</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/476297.jpg`}
-                    alt="At MAMATA Dairy Farm"
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">At MAMATA Dairy Farm</div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/289523.jpg`}
-                    alt="Group work facilitation."
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">
-                    Group work facilitation.
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="w-full">
-                  <Image
-                    src={`/images_cus/gallery/542355.jpg`}
-                    alt="Office time. Meetings."
-                    width={100}
-                    height={100}
-                    className="w-full h-auto aspect-[16/9] object-contain"
-                  />
-                  <div className="w-full bg-white">Office time. Meetings.</div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-      </div> */}
-      {/* <div id="blog" className="pt-[40px] px-3 sm:px-4 lg:px-[initial] absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
-            Blog
-            <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
-          </div>
-          <div className="relative py-13">
-            <div
-              className="bg-yellow-50 border-l-4 border-b-2 border-[#5CB22D] text-[#5CB22D] p-4 "
-              role="alert"
-            >
-              <p className="font-bold">Not found</p>
-              <p>Keep connected for amazing blogs.</p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <div id="contact" className="pt-[50px] px-3 sm:px-4 lg:px-[initial]">
-        <div className="container m-auto pb-8 sm:pb-10">
-          <div className="text-3xl sm:text-4xl font-extrabold ">
-            Contact
-          </div>
-          <div className="relative py-13 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="w-full">
-              <div className="w-full text-5xl  font-bold pb-5">
-                Towhid Ahmed
-              </div>
-              <div className="flex space-x-3 pb-5">
-                <Link
-                  href={"#"}
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
-                >
-                  <FontAwesomeIcon icon={faMailBulk} className="" />
-                </Link>
-                <Link
-                  href={"#"}
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} className="" />
-                </Link>
-                <Link
-                  href={"#"}
-                  className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2"
-                >
-                  <FontAwesomeIcon icon={faPhone} className="" />
-                </Link>
-              </div>
-            </div>
-            <div>
-              <div className="flex space-x-2">
-                <FontAwesomeIcon icon={faLocationDot} className=" mt-1.5 text-sm" />
-                <div className=" text-md">
-                  “Boro-Bari”, 13, Rashid Building 1st lane, Banglabazar,
-                  Chittagong.
-                </div>
-              </div>
-            </div>
-            <div>
-
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <div id="contact absolute top-0 max-h-0 w-[100vw] opacity-0 bg-white">
-        <Footer />
-      </div> */}
     </div>
   );
 }

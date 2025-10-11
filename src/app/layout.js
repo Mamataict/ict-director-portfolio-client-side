@@ -32,12 +32,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased ${poppins.className} bg-[#EEEEEE] `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased ${poppins.className} bg-[#EEEEEE]`}
       >
-        <SmoothScrollProvider>
+        {/* <SmoothScrollProvider> */}
           {children}
           <Toaster position="top-center" />
-        </SmoothScrollProvider>
+        {/* </SmoothScrollProvider> */}
       </body>
     </html>
   );
