@@ -59,6 +59,7 @@ export default function Home() {
   const clickedMenu = (menuName) => {
     setSelectedMenu(menuName);
   };
+
   const experiences = [
     {
       side: "left",
@@ -321,7 +322,7 @@ management etc. as a part of FREELANCING activity.`,
 
   return (
     <div className="relative min-h-screen">
-      <Navbar onClickedMenu={clickedMenu} />
+      <Navbar onClickedMenu={clickedMenu} selectedMenu = {selectedMenu} />
 
       <AnimatePresence>
         {selectedMenu && (
@@ -336,7 +337,7 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20"
                 >
-                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white">
+                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white ">
                     <div className="container m-auto flex flex-col lg:flex-row justify-center items-center space-x-5 ">
                       <div className="flex justify-center items-center lg:w-[50%]">
                         <div className="flex justify-center py-[25px] items-center">
@@ -344,7 +345,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="absolute inset-0 value-border-1 z-[1]"></div>
 
                             <div
-                              className="absolute inset-1  z-[10] bg-[#ffffff] 
+                              className="absolute inset-1  z-[10] bg-white 
       w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px]
       text-xl sm:text-2xl flex justify-center items-center text-center p-3 ml-[0.7px] mt-[0.7px] overflow-hidden"
                             >
@@ -393,7 +394,7 @@ management etc. as a part of FREELANCING activity.`,
                           <div className="flex space-x-2 sm:space-x-3 mt-[30px] sm:mt-[20px] pt-3 pb-5">
                             <Link
                               href={`/files_cus/Towhid-Ahmed.pdf`}
-                              className="bg-[#55e00b] text-[12px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                              className="bg-[#55e00b] text-[14px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
                               target="_blank"
                               referrerPolicy="no-referrer"
                             >
@@ -405,7 +406,7 @@ management etc. as a part of FREELANCING activity.`,
                                 "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
                               }
                               target="_blank"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
                             >
                               <FontAwesomeIcon
                                 icon={faLinkedin}
@@ -414,7 +415,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href={"https://www.facebook.com/towhid.ahmed"}
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -424,7 +425,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href="mailto:towhid.ahmed@gmail.com"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
                             >
                               <FontAwesomeIcon
                                 icon={faMailBulk}
@@ -433,7 +434,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href="tel:+8801677880088"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center px-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
                             >
                               <FontAwesomeIcon
                                 icon={faPhone}

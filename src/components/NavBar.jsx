@@ -94,15 +94,15 @@ const menu = [
     children: [],
   },
 ];
-const Navbar = ({ onClickedMenu }) => {
+const Navbar = ({ onClickedMenu, selectedMenu }) => {
   const [hoveredMenu, setHoveredMenu] = useState(null);
 
   return (
     <>
       <div
         className={`w-full lg:w-[100px] fixed bottom-0 lg:top-1/2 lg:translate-y-[-50%] lg:right-0 z-[99999]
-          transition-all duration-500 ease-out shadow-m px-3 sm:px-4 lg:px-[initial]
-          bg-white lg:bg-transparent shadow-3xl lg:shadow-none pb-4 lg:pb-0
+          transition-all duration-500 ease-out shadow-2xl shadow-green-500 lg:shadow-none px-3 sm:px-4 lg:px-[initial]
+          bg-white border-t-1 border-t-[#eaeac658] lg:border-none lg:bg-transparent pb-4 lg:pb-0
           `}
       >
         <div className="container m-auto flex items-center justify-between h-full w-full">
@@ -137,7 +137,7 @@ const Navbar = ({ onClickedMenu }) => {
 
                   <div className="text-center">
                     <FontAwesomeIcon
-                      className="m-auto h-5.5 w-5.5 "
+                      className={`m-auto h-5.5 w-5.5 ${selectedMenu == key ? 'text-[#55e00b] lg:text-white' : ''}`}
                       icon={icon}
                     />
                   </div>
