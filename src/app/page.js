@@ -322,13 +322,13 @@ management etc. as a part of FREELANCING activity.`,
 
   return (
     <div className="relative min-h-screen">
-      <Navbar onClickedMenu={clickedMenu} selectedMenu = {selectedMenu} />
+      <Navbar onClickedMenu={clickedMenu} selectedMenu={selectedMenu} />
 
       <AnimatePresence>
         {selectedMenu && (
           <>
             {selectedMenu === "home" && (
-              <div className="h-fit w-full">
+              <div className="h-fit w-full ">
                 <motion.section
                   key={selectedMenu}
                   initial="closed"
@@ -337,7 +337,7 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20"
                 >
-                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[70px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white ">
+                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[90px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white ">
                     <div className="container m-auto flex flex-col lg:flex-row justify-center items-center space-x-5 ">
                       <div className="flex justify-center items-center lg:w-[50%]">
                         <div className="flex justify-center py-[25px] items-center">
@@ -391,10 +391,10 @@ management etc. as a part of FREELANCING activity.`,
                             become a better place for living.
                           </div>
 
-                          <div className="flex space-x-2 sm:space-x-3 mt-[30px] sm:mt-[20px] pt-3 pb-5">
+                          <div className="flex sm:gap-3 mt-[30px] sm:mt-[40px] flex-wrap gap-2">
                             <Link
                               href={`/files_cus/Towhid-Ahmed.pdf`}
-                              className="bg-[#55e00b] text-[14px] sm:text-xl rounded-2xl px-3 py-3 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                              className="bg-[#55e00b] text-[14px] sm:text-lg rounded-2xl px-2 sm:px-3 py-2.5 sm:py-2 shadow-2xl shadow-green-300 font-semibold shadow-glow"
                               target="_blank"
                               referrerPolicy="no-referrer"
                             >
@@ -406,7 +406,7 @@ management etc. as a part of FREELANCING activity.`,
                                 "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
                               }
                               target="_blank"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faLinkedin}
@@ -415,7 +415,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href={"https://www.facebook.com/towhid.ahmed"}
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -425,7 +425,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href="mailto:towhid.ahmed@gmail.com"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faMailBulk}
@@ -434,7 +434,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href="tel:+8801677880088"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-3 sm:p-4"
+                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faPhone}
@@ -458,7 +458,7 @@ management etc. as a part of FREELANCING activity.`,
                   animate="open"
                   exit="closed"
                   variants={contentAnimation}
-                  className="bg-white min-h-screen px-2 lg:px-20"
+                  className="bg-white min-h-screen px-2 lg:px-20 pb-[70px] lg:pb-0"
                 >
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -1008,7 +1008,7 @@ management etc. as a part of FREELANCING activity.`,
                   animate="open"
                   exit="closed"
                   variants={contentAnimation}
-                  className="bg-white min-h-screen px-2 lg:px-20"
+                  className="bg-white min-h-screen px-2 lg:px-20 pb-[90px] lg:pb-0"
                 >
                   <div className="container m-auto py-15 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -1032,7 +1032,12 @@ management etc. as a part of FREELANCING activity.`,
                         className="mySwiper swiper-gallery w-full md:w-[80%] lg:w-[60%]"
                       >
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/304120.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/304120.jpg`}
                               alt="With Nepal Team Visit in Bangladesh"
@@ -1043,10 +1048,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               With Nepal Team Visit in Bangladesh
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/484460.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/484460.jpg`}
                               alt="Interview Time"
@@ -1057,10 +1067,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Interview Time
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/990866.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/990866.jpg`}
                               alt="With Yeameen Yusuf Ahmed"
@@ -1071,10 +1086,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               With Yeameen Yusuf Ahmed
                             </div>
-                          </div>
+                           </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/150272.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/150272.jpg`}
                               alt="Birthday Celebration"
@@ -1085,10 +1105,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Birthday Celebration
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/508548.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/508548.jpg`}
                               alt="Refreshment Time"
@@ -1099,10 +1124,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Refreshment Time
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/357943.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/357943.jpg`}
                               alt="Refreshment Time"
@@ -1113,10 +1143,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Refreshment Time
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/876785.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/876785.jpg`}
                               alt="At Office"
@@ -1125,10 +1160,15 @@ management etc. as a part of FREELANCING activity.`,
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">At Office</div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/484131.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/484131.jpg`}
                               alt="At Recitation and Discussion Program"
@@ -1139,11 +1179,16 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               At Recitation and Discussion Program
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
 
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/821219.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/821219.jpg`}
                               alt="Family Legacy"
@@ -1152,10 +1197,15 @@ management etc. as a part of FREELANCING activity.`,
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">Family Legacy</div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/669931.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/669931.jpg`}
                               alt="Twelve Years of BBF Program"
@@ -1166,10 +1216,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Twelve Years of BBF Program
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/507560.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/507560.jpg`}
                               alt="Inauguration of Mamata Dairy Farm"
@@ -1180,10 +1235,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Inauguration of Mamata Dairy Farm
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/868597.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/868597.jpg`}
                               alt="Office Time"
@@ -1192,10 +1252,15 @@ management etc. as a part of FREELANCING activity.`,
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">Office Time</div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/796879.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/796879.jpg`}
                               alt="With Ayub Bachchu"
@@ -1206,10 +1271,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               With Ayub Bachchu
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/810927.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/810927.jpg`}
                               alt="With Ayub Bachchu"
@@ -1220,10 +1290,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               With Ayub Bachchu
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/746056.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/746056.jpg`}
                               alt="Mamata Dairy Farm Visit"
@@ -1234,10 +1309,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Mamata Dairy Farm Visit
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/726457.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/726457.jpg`}
                               alt="Meeting with Health Program"
@@ -1248,10 +1328,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Meeting with Health Program
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/948003.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/948003.jpg`}
                               alt="Office Time at meeting"
@@ -1262,10 +1347,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Office Time at meeting
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/476297.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/476297.jpg`}
                               alt="At MAMATA Dairy Farm"
@@ -1276,10 +1366,15 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               At MAMATA Dairy Farm
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/289523.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
                               src={`/images_cus/gallery/289523.jpg`}
                               alt="Group work facilitation."
@@ -1290,12 +1385,17 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Group work facilitation.
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
-                          <div className="w-full">
+                          <Link
+                            href={`/images_cus/gallery/304120.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
                             <Image
-                              src={`/images_cus/gallery/542355.jpg`}
+                              src={`/images_cus/gallery/304120.jpg`}
                               alt="Office time. Meetings."
                               width={100}
                               height={100}
@@ -1304,7 +1404,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               Office time. Meetings.
                             </div>
-                          </div>
+                          </Link>
                         </SwiperSlide>
                       </Swiper>
                     </div>
@@ -1321,7 +1421,7 @@ management etc. as a part of FREELANCING activity.`,
                   animate="open"
                   exit="closed"
                   variants={contentAnimation}
-                  className="bg-white min-h-screen px-2 lg:px-20"
+                  className="bg-white min-h-screen px-2 lg:px-20 pb-[90px] lg:pb-0"
                 >
                   <div className="container m-auto py-15 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
@@ -1350,7 +1450,7 @@ management etc. as a part of FREELANCING activity.`,
                   animate="open"
                   exit="closed"
                   variants={contentAnimation}
-                  className="bg-white min-h-screen px-2 lg:px-20"
+                  className="bg-white min-h-screen px-2 lg:px-20 pb-[90px] lg:pb-0"
                 >
                   <Footer />
                 </motion.section>
