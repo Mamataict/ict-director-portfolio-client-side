@@ -90,7 +90,7 @@ const Footer = () => {
           </div> */}
           
           <div className="w-full pb-10 md:pb-[initial]">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-4xl mb-4 ">
+            <div className="border-l-[#467cc1] border-l-3 px-3 text-4xl mb-4 ">
               Contact Info
             </div>
             <div className="space-y-3 text-lg">
@@ -113,18 +113,18 @@ const Footer = () => {
                 />
                 <div className="">towhid.ahmed@gmail.com</div>
               </div>
-              <div className="flex space-x-2">
+              {/* <div className="flex space-x-2">
                 <FontAwesomeIcon
                   icon={faPhone}
                   color="white"
                   className="mt-1"
                 />
                 <div className="">+88 01677 880088</div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="w-full ">
-            <div className="border-l-[#5CB22D] border-l-3 px-3 text-4xl mb-6 ">
+            <div className="border-l-[#467cc1] border-l-3 px-3 text-4xl mb-6 ">
               Contact Form
             </div>
             <form onSubmit={handleSubmit} className=" space-y-2 max-w-[250px]">
@@ -135,7 +135,7 @@ const Footer = () => {
                   name="name"
                   onChange={(e) => setName(e.target.value)}
                   value={name}
-                  className="p-1 rounded border-2 border-[#5CB22D] w-full"
+                  className="p-2 rounded-lg border-2 border-gray-400 w-full"
                 />
               </div>
               <div className="space-y-3">
@@ -145,7 +145,7 @@ const Footer = () => {
                   name="name"
                   onChange={(e) => setEmail(e.target.value)}
                   value={email}
-                  className="p-1 rounded border-2 border-[#5CB22D] w-full"
+                  className="p-2 rounded-lg border-2 border-gray-400 w-full"
                 />
               </div>
               <div className="space-y-3">
@@ -155,10 +155,10 @@ const Footer = () => {
                   name="name"
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
-                  className="p-1 rounded border-2 border-[#5CB22D] w-full"
+                  className="p-2 rounded-lg border-2 border-gray-400 w-full"
                 />
               </div>
-              <button className="bg-[#5CB22D]  px-3 py-1 rounded mt-2 hover:bg-white hover:text-[#5CB22D] border-2 border-[#5CB22D] cursor-pointer">
+              <button className="bg-[#467cc1]  px-3 py-1 rounded mt-2 text-white hover:bg-white hover:text-[#467cc1] border-2 border-[#467cc1] cursor-pointer">
                 Send
               </button>
             </form>

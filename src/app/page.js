@@ -158,7 +158,7 @@ Human Rights".`,
     },
     {
       side: "right",
-      title: "1stNon-Resident Bangladeshi (NRB) Conference-2007 Dhaka.",
+      title: "1st Non-Resident Bangladeshi (NRB) Conference-2007 Dhaka.",
       date: "Sep 2007 – Dec 2007",
       points: [
         "Contributed as an organizer to have the conference for the very first time in Bangladesh.",
@@ -231,6 +231,9 @@ management etc. as a part of FREELANCING activity.`,
   ];
 
   const conferences_seminars = [
+    "12th Social Business Academia Conference & SocialTech Summit 2025, Japan",
+    "United Nations Responsible Business and Human Rights Forum, 2024 Thailand",
+    "South Asia’s- Financial Inclusion Training (S-FIT)- 2024, Dubai, U.A.E",
     "Digital Marketing Summit 2019 Dhaka",
     "Global Social Business Summit 2018 Germany",
     "Retail Congress 2018 Dhaka",
@@ -261,17 +264,18 @@ management etc. as a part of FREELANCING activity.`,
     {
       side: "right",
       title:
-        "Director, Alumni Association of North South University (AANSU) Bangladesh",
-      dates: "February 2015 – Present",
+        "Director, Junior Chamber International (JCI) Chittagong Cosmopolitan",
+      dates: "February 2015 – January 2016",
       description: "",
     },
     {
       side: "left",
       title:
-        "Director, Junior Chamber International (JCI) Chittagong Cosmopolitan",
-      dates: "February 2015 – January 2016",
+        "Director, Alumni Association of North South University (AANSU) Bangladesh",
+      dates: "February 2015 – Present",
       description: "",
     },
+
     {
       side: "right",
       title:
@@ -337,39 +341,32 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20"
                 >
-                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[90px] lg:pb-0 px-3 sm:px-4 lg:px-[initial] bg-white ">
-                    <div className="container m-auto flex flex-col lg:flex-row justify-center items-center space-x-5 ">
-                      <div className="flex justify-center items-center lg:w-[50%]">
-                        <div className="flex justify-center py-[25px] items-center">
-                          <div className="overflow-hidden relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] md:w-[440px] md:h-[440px]">
-                            <div className="absolute inset-0 value-border-1 z-[1]"></div>
-
-                            <div
-                              className="absolute inset-1  z-[10] bg-white 
-      w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px]
-      text-xl sm:text-2xl flex justify-center items-center text-center p-3 ml-[0.7px] mt-[0.7px] overflow-hidden"
-                            >
-                              <div className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] pt-4">
-                                <Image
-                                  src={`/images_cus/profile_pic/me.png`}
-                                  alt="Towhid Ahmed"
-                                  width={80}
-                                  height={80}
-                                  className="w-[330px] h-[330px] sm:w-[410px] sm:h-[410px] md:w-[430px] md:h-[430px] object-cover opacity-95 "
-                                />
-                              </div>
+                  <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[90px] lg:pb-0 px-3 sm:px-4 lg:px-[initial]">
+                    <div className="container m-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-6">
+                      <div className="flex justify-center items-center lg:w-[30%]">
+                        <div className="flex justify-center py-6 items-center">
+                          <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[260px] h-auto mx-auto">
+                            <div className="absolute inset-0 conic-rotate"></div>
+                            <div className="relative  overflow-hidden">
+                              <Image
+                                src="/images_cus/profile_pic/me.jpg"
+                                alt="Towhid Ahmed"
+                                width={400}
+                                height={400}
+                                className="w-full h-full object-contain bg-white"
+                              />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="flex justify-start items-center lg:w-[50%]">
+                      <div className="flex justify-start items-center lg:w-[70%] lg:pr-8 ">
                         <div className="space-y-2 sm:space-y-4">
                           <div className="text-4xl sm:text-5xl font-extrabold ">
                             Towhid Ahmed
                           </div>
                           <div className="text-2xl sm:text-4xl font-bold flex">
                             I&apos;m{" "}
-                            <div className="ml-2 text-[#55e00b]">
+                            <div className="ml-2 text-[#467cc1]">
                               <Typewriter
                                 options={{
                                   strings: roles,
@@ -394,7 +391,7 @@ management etc. as a part of FREELANCING activity.`,
                           <div className="flex sm:gap-3 mt-[30px] sm:mt-[40px] flex-wrap gap-2">
                             <Link
                               href={`/files_cus/Towhid-Ahmed.pdf`}
-                              className="bg-[#55e00b] text-[14px] sm:text-lg rounded-2xl px-2 sm:px-3 py-2.5 sm:py-2 shadow-2xl shadow-green-300 font-semibold shadow-glow"
+                              className="bg-[#467cc1] text-white text-[14px] sm:text-lg rounded-2xl px-2 sm:px-3 py-2.5 sm:py-2 shadow-2xl shadow-[#23519E] font-semibold shadow-glow"
                               target="_blank"
                               referrerPolicy="no-referrer"
                             >
@@ -406,41 +403,41 @@ management etc. as a part of FREELANCING activity.`,
                                 "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
                               }
                               target="_blank"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faLinkedin}
-                                className="text-[#55e00b] text-xl"
+                                className="text-[#467cc1] text-xl"
                               />
                             </Link>
                             <Link
                               href={"https://www.facebook.com/towhid.ahmed"}
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
                               target="_blank"
                             >
                               <FontAwesomeIcon
                                 icon={faFacebook}
-                                className="text-[#55e00b] text-xl"
+                                className="text-[#467cc1] text-xl"
                               />
                             </Link>
                             <Link
                               href="mailto:towhid.ahmed@gmail.com"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faMailBulk}
-                                className="text-[#55e00b] text-md"
+                                className="text-[#467cc1] text-md"
                               />
                             </Link>
-                            <Link
+                            {/* <Link
                               href="tel:+8801677880088"
-                              className="rounded-full border-[#55e00b] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faPhone}
-                                className="text-[#55e00b] text-xl"
+                                className="text-[#467cc1] text-xl"
                               />
-                            </Link>
+                            </Link> */}
                           </div>
                         </div>
                       </div>
@@ -463,14 +460,14 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Specialities
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="lg:flex py-7 space-y-10 lg:space-y-0">
                       <div className="lg:w-[50%] space-y-5 ">
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Project Management.
@@ -479,7 +476,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Training & Facilitation.
@@ -488,7 +485,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Digital Marketing.
@@ -497,7 +494,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Advertising.
@@ -506,7 +503,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Event Management & Activation.
@@ -515,7 +512,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Marketing and Management consultancy.
@@ -524,7 +521,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Information & Communication Technology (ICT).
@@ -533,7 +530,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Video editing/production.
@@ -542,7 +539,7 @@ management etc. as a part of FREELANCING activity.`,
                         <div className="flex space-x-3 ">
                           <FontAwesomeIcon
                             icon={faSnowflake}
-                            className="text-[#55e00b] text-lg sm:text-xl my-auto animate-spin"
+                            className="text-[#467cc1] text-lg sm:text-xl my-auto"
                           />
                           <div className=" text-xl sm:text-2xl">
                             Creative designs.
@@ -564,7 +561,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Background & Preamp
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div>
                       <motion.div
@@ -769,7 +766,7 @@ management etc. as a part of FREELANCING activity.`,
 
                         <button
                           onClick={() => setOpenMore(!openMore)}
-                          className="text-green-600 mt-4 cursor-pointer"
+                          className="text-[#467cc1] mt-4 cursor-pointer"
                         >
                           {openMore ? "See Less" : "See More"}
                         </button>
@@ -780,7 +777,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Career
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="py-7">
                       <div className="leading-relaxed ">
@@ -804,7 +801,7 @@ management etc. as a part of FREELANCING activity.`,
                               <div>
                                 <FontAwesomeIcon
                                   icon={faStarOfLife}
-                                  className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                  className="text-[#467cc1] text-lg sm:text-xl mt-1"
                                 />
                               </div>
                               <div className="">
@@ -837,7 +834,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Entrepreneurship & Social Initiatives
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
                       {entrepreneurship_social_init.map((exp, index) => (
@@ -853,7 +850,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div>
                               <FontAwesomeIcon
                                 icon={faCircleDot}
-                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                className="text-[#467cc1] text-lg sm:text-xl mt-1"
                               />
                             </div>
                             <div className="">
@@ -890,7 +887,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Education
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-7">
                       {education.map((exp, index) => (
@@ -906,7 +903,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div>
                               <FontAwesomeIcon
                                 icon={faGraduationCap}
-                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                className="text-[#467cc1] text-lg sm:text-xl mt-1"
                               />
                             </div>
                             <div className="">
@@ -933,7 +930,15 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Conferences & Seminars
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
+                    </div>
+
+                    <div className="pt-7 pb-1">
+                      <div className="leading-relaxed ">
+                        Towhid Ahmed believes in learning from every object,
+                        activity, experience and person. And to pursue that, he
+                        often attends seminars and conferences around the globe.
+                      </div>
                     </div>
                     <div className="relative space-y-2 py-7">
                       {conferences_seminars.map((exp, index) => (
@@ -942,7 +947,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div>
                               <FontAwesomeIcon
                                 icon={faStar}
-                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                className="text-[#467cc1] text-lg sm:text-xl mt-1"
                               />
                             </div>
                             <div className="">
@@ -959,7 +964,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Awards & Achievements
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 py-13">
                       {awards_achievements.map((exp, index) => (
@@ -975,7 +980,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div>
                               <FontAwesomeIcon
                                 icon={faCircleDot}
-                                className="text-[#55e00b] text-lg sm:text-xl mt-1"
+                                className="text-[#467cc1] text-lg sm:text-xl mt-1"
                               />
                             </div>
                             <div className="">
@@ -1013,7 +1018,7 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-15 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Gallery
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="relative pt-13">
                       <Swiper
@@ -1031,6 +1036,66 @@ management etc. as a part of FREELANCING activity.`,
                         modules={[Autoplay, Navigation]}
                         className="mySwiper swiper-gallery w-full md:w-[80%] lg:w-[60%]"
                       >
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/2025_Japan_42.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/2025_Japan_42.jpg`}
+                              alt="With Nepal Team Visit in Bangladesh"
+                              width={100}
+                              height={100}
+                              className=" w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              12th Social Business Academia Conference &
+                              SocialTech Summit 2025, Japan
+                            </div>
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/2025_Japan_41.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/2025_Japan_41.jpg`}
+                              alt="With Nepal Team Visit in Bangladesh"
+                              width={100}
+                              height={100}
+                              className=" w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              12th Social Business Academia Conference &
+                              SocialTech Summit 2025, Japan
+                            </div>
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/2025_Japan_43.jpg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/2025_Japan_43.jpg`}
+                              alt="With Nepal Team Visit in Bangladesh"
+                              width={100}
+                              height={100}
+                              className=" w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              12th Social Business Academia Conference &
+                              SocialTech Summit 2025, Japan
+                            </div>
+                          </Link>
+                        </SwiperSlide>
                         <SwiperSlide>
                           <Link
                             href={`/images_cus/gallery/304120.jpg`}
@@ -1086,7 +1151,7 @@ management etc. as a part of FREELANCING activity.`,
                             <div className="w-full bg-white">
                               With Yeameen Yusuf Ahmed
                             </div>
-                           </Link>
+                          </Link>
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
@@ -1251,7 +1316,58 @@ management etc. as a part of FREELANCING activity.`,
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
-                            <div className="w-full bg-white">Office Time</div>
+                            {/* <div className="w-full bg-white">Office Time</div> */}
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/at_office_1.jpeg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/at_office_1.jpeg`}
+                              alt="Office Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            {/* <div className="w-full bg-white">Office Time</div> */}
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/at_office_2.jpeg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/at_office_2.jpeg`}
+                              alt="Office Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            {/* <div className="w-full bg-white">Office Time</div> */}
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href={`/images_cus/gallery/at_office_3.jpeg`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src={`/images_cus/gallery/at_office_3.jpeg`}
+                              alt="Office Time"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            {/* <div className="w-full bg-white">Office Time</div> */}
                           </Link>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -1387,25 +1503,6 @@ management etc. as a part of FREELANCING activity.`,
                             </div>
                           </Link>
                         </SwiperSlide>
-                        <SwiperSlide>
-                          <Link
-                            href={`/images_cus/gallery/304120.jpg`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="w-full"
-                          >
-                            <Image
-                              src={`/images_cus/gallery/304120.jpg`}
-                              alt="Office time. Meetings."
-                              width={100}
-                              height={100}
-                              className="w-full h-auto aspect-[16/9] object-contain"
-                            />
-                            <div className="w-full bg-white">
-                              Office time. Meetings.
-                            </div>
-                          </Link>
-                        </SwiperSlide>
                       </Swiper>
                     </div>
                   </div>
@@ -1426,11 +1523,11 @@ management etc. as a part of FREELANCING activity.`,
                   <div className="container m-auto py-15 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Blog
-                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#55e00b] w-25"></span>
+                      <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
                     <div className="relative py-13">
                       <div
-                        className="bg-yellow-50 border-l-4 border-b-2 border-[#5CB22D] text-[#5CB22D] p-4 "
+                        className="bg-yellow-50 border-l-4 border-b-2 border-gray-500 p-4 "
                         role="alert"
                       >
                         <p className="font-bold">Not found</p>

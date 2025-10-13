@@ -101,7 +101,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
     <>
       <div
         className={`w-full lg:w-[100px] fixed bottom-0 lg:top-1/2 lg:translate-y-[-50%] lg:right-0 z-[99999]
-          transition-all duration-500 ease-out shadow-2xl shadow-green-500 lg:shadow-none px-3 sm:px-4 lg:px-[initial]
+          transition-all duration-500 ease-out shadow-2xl shadow-[#467cc1] lg:shadow-none px-3 sm:px-4 lg:px-[initial]
           bg-white border-t-1 border-t-[#eaeac658] lg:border-none lg:bg-transparent pb-4 lg:pb-0
           `}
       >
@@ -111,7 +111,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
             {menu.map(({ label, icon, key, linked, children }) => (
               <li key={key} className="relative group text-[20px] h-12 w-12 mx-auto">
                 <div
-                  className={`cursor-pointer absolute right-0 lg:right-3 top-2.5 transform-all duration-500 hover:bg-[#55e00b] rounded-full py-2 px-3 flex gap-1 bg-[#EEEEEE] shadow-2xl hover:text-white `}
+                  className={`cursor-pointer absolute right-0 lg:right-3 top-2.5 transform-all duration-500 hover:bg-[#467cc1] rounded-full py-2 px-3 flex gap-1 bg-[#EEEEEE] shadow-2xl hover:text-white `}
                   onMouseEnter={() => setHoveredMenu(key)}
                   onMouseLeave={() => setHoveredMenu(null)}
                   disabled={children.length === 0}
@@ -137,7 +137,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
 
                   <div className="text-center">
                     <FontAwesomeIcon
-                      className={`m-auto h-5.5 w-5.5 ${selectedMenu == key ? 'text-[#55e00b] lg:text-white' : ''}`}
+                      className={`m-auto h-5.5 w-5.5 ${selectedMenu == key ? 'text-[#467cc1] lg:text-white' : ''}`}
                       icon={icon}
                     />
                   </div>
@@ -152,7 +152,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
                     {children.map((child, i) => (
                       <li
                         key={i}
-                        className=" text-[14px] hover:text-[#5CB22D] cursor-pointer rounded-3xl shadow-2xl px-3 py-3 bg-white"
+                        className=" text-[14px] hover:text-[#467cc1] cursor-pointer rounded-3xl shadow-2xl px-3 py-3 bg-white"
                         onMouseEnter={() => setHoveredMenu(child.key)}
                         onMouseLeave={() => setHoveredMenu(null)}
                       >
@@ -194,7 +194,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
                                 {child.children.map((subChild, i) => (
                                   <li
                                     key={i}
-                                    className="py-[8px] text-[14px] hover:text-[#5CB22D] border-b border-b-[#e5f3e7ee] cursor-pointer"
+                                    className="py-[8px] text-[14px] hover:text-[#467cc1] border-b border-b-[#e5e7f3ee] cursor-pointer"
                                   >
                                     {subChild.label}
                                   </li>
