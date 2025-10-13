@@ -345,7 +345,7 @@ management etc. as a part of FREELANCING activity.`,
                     <div className="container m-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-6">
                       <div className="flex justify-center items-center lg:w-[30%]">
                         <div className="flex justify-center py-6 items-center">
-                          <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[260px] h-auto mx-auto">
+                          <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[270px] h-auto mx-auto">
                             <div className="absolute inset-0 conic-rotate"></div>
                             <div className="relative  overflow-hidden">
                               <Image
