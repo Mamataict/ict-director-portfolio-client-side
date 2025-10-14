@@ -37,9 +37,9 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="py-10 sm:py-5 px-2 md:px-[initial]">
+      <div className="py-6 sm:py-5 px-2 md:px-[initial]">
         <div className="container m-auto
-         py-10  space-y-10 ">
+         py-6 sm:py-10 space-y-10 ">
           {/* <div className="w-full md:w-[40%] pb-10 md:pb-[initial] space-y-2">
             <div className="text-[35px] sm:text-[40px] font-bold ">
               TOWHID AHMED

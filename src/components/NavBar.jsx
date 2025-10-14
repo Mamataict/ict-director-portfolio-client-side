@@ -111,7 +111,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
             {menu.map(({ label, icon, key, linked, children }) => (
               <li key={key} className="relative group text-[20px] h-12 w-12 mx-auto">
                 <div
-                  className={`cursor-pointer absolute right-0 lg:right-3 top-2.5 transform-all duration-500 hover:bg-[#467cc1] rounded-full py-2 px-3 flex gap-1 bg-[#EEEEEE] shadow-2xl hover:text-white `}
+                  className={`cursor-pointer absolute right-0 lg:right-3 top-2.5 transform-all duration-500 hover:bg-[#467cc1] rounded-full py-2 px-3 flex gap-1 bg-[#EEEEEE] shadow-2xl lg:shadow-none hover:text-white `}
                   onMouseEnter={() => setHoveredMenu(key)}
                   onMouseLeave={() => setHoveredMenu(null)}
                   disabled={children.length === 0}
@@ -119,6 +119,10 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
                     if (linked) {
                       e.preventDefault();
                       onClickedMenu(key);
+                      window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
                     }
                   }}
                 >
@@ -152,7 +156,7 @@ const Navbar = ({ onClickedMenu, selectedMenu }) => {
                     {children.map((child, i) => (
                       <li
                         key={i}
-                        className=" text-[14px] hover:text-[#467cc1] cursor-pointer rounded-3xl shadow-2xl px-3 py-3 bg-white"
+                        className=" text-[14px] hover:text-[#467cc1] cursor-pointer rounded-3xl shadow-2xl lg:shadow-none px-3 py-3 bg-white"
                         onMouseEnter={() => setHoveredMenu(child.key)}
                         onMouseLeave={() => setHoveredMenu(null)}
                       >

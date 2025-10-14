@@ -457,7 +457,7 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20 pb-[70px] lg:pb-0"
                 >
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 sm:py-12">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Specialities
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -558,7 +558,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12">
+                  <div className="container m-auto py-6 lg:py-12">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Background & Preamp
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -774,7 +774,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 lg:py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Career
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -831,7 +831,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 lg:py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Entrepreneurship & Social Initiatives
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -884,7 +884,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 lg:py-12">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Education
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -927,7 +927,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 lg:py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Conferences & Seminars
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -961,7 +961,7 @@ management etc. as a part of FREELANCING activity.`,
                     </div>
                   </div>
 
-                  <div className="container m-auto py-12 ">
+                  <div className="container m-auto py-6 lg:py-12 ">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Awards & Achievements
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
@@ -1015,12 +1015,12 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20 pb-[90px] lg:pb-0"
                 >
-                  <div className="container m-auto py-15 sm:py-15">
+                  <div className="container m-auto py-6 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Gallery
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
                     </div>
-                    <div className="relative pt-13">
+                    <div className="relative pt-9 lg:pt-13">
                       <Swiper
                         spaceBetween={30}
                         centeredSlides={true}
@@ -1520,7 +1520,7 @@ management etc. as a part of FREELANCING activity.`,
                   variants={contentAnimation}
                   className="bg-white min-h-screen px-2 lg:px-20 pb-[90px] lg:pb-0"
                 >
-                  <div className="container m-auto py-15 sm:py-15">
+                  <div className="container m-auto py-6 sm:py-15">
                     <div className="text-3xl sm:text-4xl font-extrabold relative w-fit pb-2">
                       Blog
                       <span className="absolute bottom-0 left-0 h-[2px] bg-[#467cc1] w-25"></span>
