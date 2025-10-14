@@ -86,13 +86,13 @@ const menu = [
     children: [],
   },
 
-  {
-    label: "Contact",
-    icon: faPhone,
-    key: "contact",
-    linked: true,
-    children: [],
-  },
+  // {
+  //   label: "Contact",
+  //   icon: faPhone,
+  //   key: "contact",
+  //   linked: true,
+  //   children: [],
+  // },
 ];
 const Navbar = ({ onClickedMenu, selectedMenu }) => {
   const [hoveredMenu, setHoveredMenu] = useState(null);
