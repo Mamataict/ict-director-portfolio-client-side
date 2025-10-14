@@ -11,7 +11,6 @@ import {
   faCircleDot,
   faGraduationCap,
   faMailBulk,
-  faPhone,
   faSnowflake,
   faStar,
   faStarOfLife,
@@ -19,7 +18,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faLine, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "typewriter-effect";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -343,31 +342,35 @@ management etc. as a part of FREELANCING activity.`,
                   className="bg-white min-h-screen px-2 lg:px-20"
                 >
                   <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[90px] lg:pb-0 px-3 sm:px-4 lg:px-[initial]">
-                    <div className="container m-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-6">
-                      <div className="flex justify-center items-center lg:w-[30%]">
+                    <div className="container m-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-2">
+                      <div className="flex justify-center items-center lg:w-[40%]">
                         <div className="flex justify-center py-6 items-center">
-                          <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[270px] h-auto mx-auto">
+                          <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[300px] h-auto mx-auto">
                             <div className="absolute inset-0 conic-rotate"></div>
-                            <div className="relative  overflow-hidden">
+                            <div className="relative overflow-hidden">
                               <Image
-                                src="/images_cus/profile_pic/me.jpg"
+                                src="/images_cus/profile_pic/me-new-min.png"
                                 alt="Towhid Ahmed"
-                                width={400}
-                                height={400}
+                                width={300}
+                                height={300}
                                 className="w-full h-full object-contain bg-white"
                               />
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="flex justify-start items-center lg:w-[70%] lg:pr-8 ">
+                      <div className="flex justify-start items-center lg:w-[60%] lg:pr-8 ">
                         <div className="space-y-2 sm:space-y-4">
                           <div className="text-4xl sm:text-5xl font-extrabold ">
                             Towhid Ahmed
                           </div>
                           <div className="text-2xl sm:text-4xl font-bold flex">
-                            I&apos;m{" "}
-                            <div className="ml-2 text-[#467cc1]">
+                            
+                            <div className="my-auto h-full w-6">
+                            <div className="w-full h-1 bg-black">
+                            </div>
+                            </div>
+                            <div className="ml-1 text-[#467cc1]">
                               <Typewriter
                                 options={{
                                   strings: roles,
@@ -381,10 +384,10 @@ management etc. as a part of FREELANCING activity.`,
                             </div>
                           </div>
                           <div className="text-md sm:text-lg ">
-                            My goal is to integrate social development of
+                            His goal is to integrate social development of
                             Bangladesh with business, social initiatives,
                             technology based entrepreneurships and knowledge
-                            development. I invest my thoughts, ideas and
+                            development. He invests his thoughts, ideas and
                             knowledge and expertise to help the society to
                             become a better place for living.
                           </div>
