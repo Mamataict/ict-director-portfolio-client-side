@@ -391,7 +391,7 @@ management etc. as a part of FREELANCING activity.`,
 
                           <div className="flex sm:gap-3 mt-[30px] sm:mt-[40px] flex-wrap gap-2">
                             <Link
-                              href={`/files_cus/Towhid-Ahmed.pdf`}
+                              href="/files_cus/Towhid-Ahmed.pdf"
                               className="bg-[#467cc1] text-white text-[14px] sm:text-lg rounded-2xl px-2 sm:px-3 py-2.5 sm:py-2 shadow-2xl shadow-[#23519E] font-semibold shadow-glow"
                               target="_blank"
                               referrerPolicy="no-referrer"
@@ -549,7 +549,7 @@ management etc. as a part of FREELANCING activity.`,
                       </div>
                       <div className="lg:w-[50%] flex justify-center items-center ">
                         <Image
-                          src={`/images_cus/me/7.jpg`}
+                          src="/images_cus/me/7.jpg"
                           alt="Towhid Ahmed"
                           width={80}
                           height={80}
@@ -590,7 +590,7 @@ management etc. as a part of FREELANCING activity.`,
                           </div>
 
                           <Image
-                            src={`/images_cus/me/with-father.jpg`}
+                            src="/images_cus/me/with-father.jpg"
                             alt="Towhid Ahmed"
                             width={80}
                             height={80}
@@ -635,7 +635,7 @@ management etc. as a part of FREELANCING activity.`,
                           Business Forum 2013” hosted at North South University.
                           <div className="lg:flex lg:justify-between lg:space-x-5 ">
                             <Image
-                              src={`/images_cus/me/IMG_9150.jpg`}
+                              src="/images_cus/me/IMG_9150.jpg"
                               alt="Towhid Ahmed"
                               width={80}
                               height={80}
@@ -1039,13 +1039,13 @@ management etc. as a part of FREELANCING activity.`,
                       >
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/2025_Japan_42.jpg`}
+                            href="/images_cus/gallery/2025_Japan_42.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/2025_Japan_42.jpg`}
+                              src="/images_cus/gallery/2025_Japan_42.jpg"
                               alt="With Nepal Team Visit in Bangladesh"
                               width={100}
                               height={100}
@@ -1059,13 +1059,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/2025_Japan_41.jpg`}
+                            href="/images_cus/gallery/2025_Japan_41.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/2025_Japan_41.jpg`}
+                              src="/images_cus/gallery/2025_Japan_41.jpg"
                               alt="With Nepal Team Visit in Bangladesh"
                               width={100}
                               height={100}
@@ -1079,13 +1079,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/2025_Japan_43.jpg`}
+                            href="/images_cus/gallery/2025_Japan_43.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/2025_Japan_43.jpg`}
+                              src="/images_cus/gallery/2025_Japan_43.jpg"
                               alt="With Nepal Team Visit in Bangladesh"
                               width={100}
                               height={100}
@@ -1099,13 +1099,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/304120.jpg`}
+                            href="/images_cus/gallery/304120.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/304120.jpg`}
+                              src="/images_cus/gallery/304120.jpg"
                               alt="With Nepal Team Visit in Bangladesh"
                               width={100}
                               height={100}
@@ -1118,13 +1118,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/484460.jpg`}
+                            href="/images_cus/gallery/484460.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/484460.jpg`}
+                              src="/images_cus/gallery/484460.jpg"
                               alt="Interview Time"
                               width={100}
                               height={100}
@@ -1137,13 +1137,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/990866.jpg`}
+                            href="/images_cus/gallery/990866.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/990866.jpg`}
+                              src="/images_cus/gallery/990866.jpg"
                               alt="With Yeameen Yusuf Ahmed"
                               width={100}
                               height={100}
@@ -1156,13 +1156,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/150272.jpg`}
+                            href="/images_cus/gallery/150272.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/150272.jpg`}
+                              src="/images_cus/gallery/150272.jpg"
                               alt="Birthday Celebration"
                               width={100}
                               height={100}
@@ -1175,13 +1175,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/508548.jpg`}
+                            href="/images_cus/gallery/508548.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/508548.jpg`}
+                              src="/images_cus/gallery/508548.jpg"
                               alt="Refreshment Time"
                               width={100}
                               height={100}
@@ -1194,13 +1194,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/357943.jpg`}
+                            href="/images_cus/gallery/357943.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/357943.jpg`}
+                              src="/images_cus/gallery/357943.jpg"
                               alt="Refreshment Time"
                               width={100}
                               height={100}
@@ -1213,13 +1213,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/876785.jpg`}
+                            href="/images_cus/gallery/876785.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/876785.jpg`}
+                              src="/images_cus/gallery/876785.jpg"
                               alt="At Office"
                               width={100}
                               height={100}
@@ -1230,13 +1230,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/484131.jpg`}
+                            href="/images_cus/gallery/484131.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/484131.jpg`}
+                              src="/images_cus/gallery/484131.jpg"
                               alt="At Recitation and Discussion Program"
                               width={100}
                               height={100}
@@ -1250,13 +1250,13 @@ management etc. as a part of FREELANCING activity.`,
 
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/821219.jpg`}
+                            href="/images_cus/gallery/821219.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/821219.jpg`}
+                              src="/images_cus/gallery/821219.jpg"
                               alt="Family Legacy"
                               width={100}
                               height={100}
@@ -1267,13 +1267,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/669931.jpg`}
+                            href="/images_cus/gallery/669931.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/669931.jpg`}
+                              src="/images_cus/gallery/669931.jpg"
                               alt="Twelve Years of BBF Program"
                               width={100}
                               height={100}
@@ -1286,13 +1286,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/507560.jpg`}
+                            href="/images_cus/gallery/507560.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/507560.jpg`}
+                              src="/images_cus/gallery/507560.jpg"
                               alt="Inauguration of Mamata Dairy Farm"
                               width={100}
                               height={100}
@@ -1305,13 +1305,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/868597.jpg`}
+                            href="/images_cus/gallery/868597.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/868597.jpg`}
+                              src="/images_cus/gallery/868597.jpg"
                               alt="Office Time"
                               width={100}
                               height={100}
@@ -1322,13 +1322,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/at_office_1.jpeg`}
+                            href="/images_cus/gallery/at_office_1.jpeg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/at_office_1.jpeg`}
+                              src="/images_cus/gallery/at_office_1.jpeg"
                               alt="Office Time"
                               width={100}
                               height={100}
@@ -1339,13 +1339,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/at_office_2.jpeg`}
+                            href="/images_cus/gallery/at_office_2.jpeg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/at_office_2.jpeg`}
+                              src="/images_cus/gallery/at_office_2.jpeg"
                               alt="Office Time"
                               width={100}
                               height={100}
@@ -1356,13 +1356,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/at_office_3.jpeg`}
+                            href="/images_cus/gallery/at_office_3.jpeg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/at_office_3.jpeg`}
+                              src="/images_cus/gallery/at_office_3.jpeg"
                               alt="Office Time"
                               width={100}
                               height={100}
@@ -1373,13 +1373,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/796879.jpg`}
+                            href="/images_cus/gallery/796879.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/796879.jpg`}
+                              src="/images_cus/gallery/796879.jpg"
                               alt="With Ayub Bachchu"
                               width={100}
                               height={100}
@@ -1392,13 +1392,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/810927.jpg`}
+                            href="/images_cus/gallery/810927.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/810927.jpg`}
+                              src="/images_cus/gallery/810927.jpg"
                               alt="With Ayub Bachchu"
                               width={100}
                               height={100}
@@ -1411,13 +1411,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/746056.jpg`}
+                            href="/images_cus/gallery/746056.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/746056.jpg`}
+                              src="/images_cus/gallery/746056.jpg"
                               alt="Mamata Dairy Farm Visit"
                               width={100}
                               height={100}
@@ -1430,13 +1430,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/726457.jpg`}
+                            href="/images_cus/gallery/726457.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/726457.jpg`}
+                              src="/images_cus/gallery/726457.jpg"
                               alt="Meeting with Health Program"
                               width={100}
                               height={100}
@@ -1449,13 +1449,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/948003.jpg`}
+                            href="/images_cus/gallery/948003.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/948003.jpg`}
+                              src="/images_cus/gallery/948003.jpg"
                               alt="Office Time at meeting"
                               width={100}
                               height={100}
@@ -1468,13 +1468,32 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/476297.jpg`}
+                            href="/images_cus/gallery/542355.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/476297.jpg`}
+                              src="/images_cus/gallery/542355.jpg"
+                              alt="Office Time at meeting"
+                              width={100}
+                              height={100}
+                              className="w-full h-auto aspect-[16/9] object-contain"
+                            />
+                            <div className="w-full bg-white">
+                              Office Time at meeting
+                            </div>
+                          </Link>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                          <Link
+                            href="/images_cus/gallery/476297.jpg"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="w-full"
+                          >
+                            <Image
+                              src="/images_cus/gallery/476297.jpg"
                               alt="At MAMATA Dairy Farm"
                               width={100}
                               height={100}
@@ -1487,13 +1506,13 @@ management etc. as a part of FREELANCING activity.`,
                         </SwiperSlide>
                         <SwiperSlide>
                           <Link
-                            href={`/images_cus/gallery/289523.jpg`}
+                            href="/images_cus/gallery/289523.jpg"
                             target="_blank"
                             rel="noreferrer"
                             className="w-full"
                           >
                             <Image
-                              src={`/images_cus/gallery/289523.jpg`}
+                              src="/images_cus/gallery/289523.jpg"
                               alt="Group work facilitation."
                               width={100}
                               height={100}
