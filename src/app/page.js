@@ -18,7 +18,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { faFacebook, faLine, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faLine,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 import Typewriter from "typewriter-effect";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -361,14 +365,12 @@ management etc. as a part of FREELANCING activity.`,
                       </div>
                       <div className="flex justify-start items-center lg:w-[63%] lg:pr-8">
                         <div className="space-y-2 sm:space-y-4">
-                          <div className="text-4xl sm:text-5xl font-extrabold ">
+                          <div className="text-[40px] sm:text-5xl font-extrabold ">
                             Towhid Ahmed
                           </div>
-                          <div className="text-2xl sm:text-4xl font-bold flex">
-                            
+                          <div className="text-[25px] sm:text-4xl font-bold flex">
                             <div className="my-auto h-full w-6">
-                            <div className="w-full h-1 bg-black">
-                            </div>
+                              <div className="w-full h-1 bg-black"></div>
                             </div>
                             <div className="ml-1 text-[#467cc1]">
                               <Typewriter
@@ -383,8 +385,8 @@ management etc. as a part of FREELANCING activity.`,
                               />
                             </div>
                           </div>
-                          <div className="text-md sm:text-lg ">
-                            Driven by a vision to integrate social development of
+                          <div className="text-[18px] sm:text-lg ">
+                            His goal is to integrate social development of
                             Bangladesh with business, social initiatives,
                             technology based entrepreneurships and knowledge
                             development. He invests his thoughts, ideas and
@@ -395,7 +397,7 @@ management etc. as a part of FREELANCING activity.`,
                           <div className="flex sm:gap-3 mt-[30px] sm:mt-[40px] flex-wrap gap-2">
                             <Link
                               href="/files_cus/Towhid-Ahmed.pdf"
-                              className="bg-[#467cc1] text-white text-[14px] sm:text-lg rounded-2xl px-2 sm:px-3 py-2.5 sm:py-2 shadow-2xl shadow-[#23519E] font-semibold shadow-glow"
+                              className="bg-[#467cc1] text-white text-[16px] sm:text-md rounded-2xl px-2 sm:px-3 py-[12px] shadow-2xl shadow-[#23519E] font-semibold shadow-glow"
                               target="_blank"
                               referrerPolicy="no-referrer"
                             >
@@ -407,7 +409,7 @@ management etc. as a part of FREELANCING activity.`,
                                 "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
                               }
                               target="_blank"
-                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center py-3 px-[13px]"
                             >
                               <FontAwesomeIcon
                                 icon={faLinkedin}
@@ -416,7 +418,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href={"https://www.facebook.com/towhid.ahmed"}
-                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-3"
                               target="_blank"
                             >
                               <FontAwesomeIcon
@@ -426,7 +428,7 @@ management etc. as a part of FREELANCING activity.`,
                             </Link>
                             <Link
                               href="mailto:towhid.ahmed@gmail.com"
-                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-2 sm:p-3"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center p-3"
                             >
                               <FontAwesomeIcon
                                 icon={faMailBulk}
@@ -681,10 +683,10 @@ management etc. as a part of FREELANCING activity.`,
                           Bangladesh, Microfinance, Health Care Services
                           including Maternity and Child health care, Education
                           for underprivileged children and section of the
-                          society, ensuring
+                          society, ensuring 
                           {openMore && (
                             <>
-                              pure drinking water and sanitation, Prevention of
+                              {" "} pure drinking water and sanitation, Prevention of
                               HIV/AIDS, Adolescents Health and Agriculture,
                               Livestock & Fisheries, Women Workers Rights,
                               Gender, Human Rights, Child Rights , Improvement
