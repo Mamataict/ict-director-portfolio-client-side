@@ -409,7 +409,7 @@ management etc. as a part of FREELANCING activity.`,
                                 "https://www.linkedin.com/in/towhidahmed/?authType=NAME_SEARCH&authToken=_hJf&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2CclickedEntityId%3A103409501%2CauthType%3ANAME_SEARCH%2Cidx%3A1-3-3%2CtarId%3A1461729116609%2Ctas%3Atowhid%20ahmed"
                               }
                               target="_blank"
-                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center py-3 px-[13px]"
+                              className="rounded-full border-[#467cc1] border-2 flex justify-center items-center py-3 px-[13.5px]"
                             >
                               <FontAwesomeIcon
                                 icon={faLinkedin}
