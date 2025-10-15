@@ -339,11 +339,11 @@ management etc. as a part of FREELANCING activity.`,
                   animate="open"
                   exit="closed"
                   variants={contentAnimation}
-                  className="bg-white min-h-screen px-2 lg:px-20"
+                  className="bg-white min-h-screen px-2 lg:px-20 xl:px-30 2xl:px-40"
                 >
                   <div className="flex justify-center overflow-hidden items-center min-h-[100vh] pb-[90px] lg:pb-0 px-3 sm:px-4 lg:px-[initial]">
                     <div className="container m-auto flex flex-col lg:flex-row justify-center items-center lg:space-x-2">
-                      <div className="flex justify-center items-center lg:w-[40%]">
+                      <div className="flex justify-center items-center lg:w-[37%]">
                         <div className="flex justify-center py-6 items-center">
                           <div className="relative p-[4px] overflow-hidden rotate-border w-full sm:w-[350px] lg:w-[300px] h-auto mx-auto">
                             <div className="absolute inset-0 conic-rotate"></div>
@@ -359,7 +359,7 @@ management etc. as a part of FREELANCING activity.`,
                           </div>
                         </div>
                       </div>
-                      <div className="flex justify-start items-center lg:w-[60%] lg:pr-8 ">
+                      <div className="flex justify-start items-center lg:w-[63%] lg:pr-8">
                         <div className="space-y-2 sm:space-y-4">
                           <div className="text-4xl sm:text-5xl font-extrabold ">
                             Towhid Ahmed
@@ -384,7 +384,7 @@ management etc. as a part of FREELANCING activity.`,
                             </div>
                           </div>
                           <div className="text-md sm:text-lg ">
-                            His goal is to integrate social development of
+                            Driven by a vision to integrate social development of
                             Bangladesh with business, social initiatives,
                             technology based entrepreneurships and knowledge
                             development. He invests his thoughts, ideas and
