@@ -1111,13 +1111,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/304120.jpg"
-                              alt="With Nepal Team Visit in Bangladesh"
+                              alt="With Nepal Team in Bangladesh"
                               width={100}
                               height={100}
                               className=" w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              With Nepal Team Visit in Bangladesh
+                              With Nepal Team in Bangladesh
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1130,13 +1130,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/484460.jpg"
-                              alt="Interview Time"
+                              alt="Interview"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Interview Time
+                              Interview
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1149,13 +1149,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/990866.jpg"
-                              alt="With Yeameen Yusuf Ahmed"
+                              alt="With Yusouf Ahmed"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              With Yeameen Yusuf Ahmed
+                              With Yusouf Ahmed
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1192,9 +1192,9 @@ management etc. as a part of FREELANCING activity.`,
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
-                            <div className="w-full bg-white">
+                            {/* <div className="w-full bg-white">
                               Refreshment Time
-                            </div>
+                            </div> */}
                           </Link>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -1211,9 +1211,9 @@ management etc. as a part of FREELANCING activity.`,
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
-                            <div className="w-full bg-white">
+                            {/* <div className="w-full bg-white">
                               Refreshment Time
-                            </div>
+                            </div> */}
                           </Link>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -1225,12 +1225,12 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/876785.jpg"
-                              alt="At Office"
+                              alt="At the Office"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
-                            <div className="w-full bg-white">At Office</div>
+                            <div className="w-full bg-white">At the Office</div>
                           </Link>
                         </SwiperSlide>
                         <SwiperSlide>
@@ -1242,13 +1242,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/484131.jpg"
-                              alt="At Recitation and Discussion Program"
+                              alt="Recitation and Discussion Program"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              At Recitation and Discussion Program
+                              Recitation and Discussion Program
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1279,13 +1279,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/669931.jpg"
-                              alt="Twelve Years of BBF Program"
+                              alt="Twelve Years of the BBF Program"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Twelve Years of BBF Program
+                              Twelve Years of the BBF Program
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1298,13 +1298,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/507560.jpg"
-                              alt="Inauguration of Mamata Dairy Farm"
+                              alt="The Inauguration of Mamata Dairy Farm"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Inauguration of Mamata Dairy Farm
+                              The Inauguration of Mamata Dairy Farm
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1442,13 +1442,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/726457.jpg"
-                              alt="Meeting with Health Program"
+                              alt="Meeting with the Health Program team"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Meeting with Health Program
+                              Meeting with the Health Program team
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1461,13 +1461,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/948003.jpg"
-                              alt="Office Time at meeting"
+                              alt="Office Meeting Time"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Office Time at meeting
+                              Office Meeting Time
                             </div>
                           </Link>
                         </SwiperSlide>
@@ -1480,13 +1480,13 @@ management etc. as a part of FREELANCING activity.`,
                           >
                             <Image
                               src="/images_cus/gallery/542355.jpg"
-                              alt="Office Time at meeting"
+                              alt="Office Meeting Time"
                               width={100}
                               height={100}
                               className="w-full h-auto aspect-[16/9] object-contain"
                             />
                             <div className="w-full bg-white">
-                              Office Time at meeting
+                              Office Meeting Time
                             </div>
                           </Link>
                         </SwiperSlide>
